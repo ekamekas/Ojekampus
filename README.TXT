@@ -4,9 +4,8 @@ Tell the reader (someone who does not know anything about this project)
 all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+PROJECT TITLE: Ojekampus
+PURPOSE OF PROJECT: Requirement for passing Object-Oriented Programming course
+VERSION or DATE: 0.2.25
+AUTHORS: Mas Eka Setiawan
+USER INSTRUCTIONS: -
