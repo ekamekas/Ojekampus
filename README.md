@@ -4,7 +4,7 @@
 Author	: Mas Eka Setiawan
 Version	: 0.2.26
 
-## Changelog
+### Changelog
 [+] 0.2.25
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Project init
 [+] 0.2.26
