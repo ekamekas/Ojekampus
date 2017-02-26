@@ -1,7 +1,6 @@
 # Ojekampus
-==========
 ### Object-oriented programming project
-
+==========
 Author	: Mas Eka Setiawan
 Version	: 0.2.26
 
