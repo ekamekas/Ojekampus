@@ -1,105 +1,263 @@
 
 /**
- * Write a description of class Pesanan here.
+ * Kelas Pesanan menangani data pesanan yang dibuat akibat user dari sistem ojeKampus
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Mas Eka Setiawan 
+ * @version 2017.3.3
  */
 public class Pesanan
 {
-    // instance variables - replace the example below with your own
-    private Ojek pelayan;
+    // Setiap variabel dan instance variabel hanya dapat diakses oleh class Pesanan saja
+    // variabel pelayan merupakan instance dari class Ojek sebagai representasi pengemudi
+    private Ojek pelayan = null;
+    // variabel pengguna merupakan instance dari class Pengguna sebagai representasi user ojeKampus
     private Pelanggan pengguna;
-    private String pelanggan_awal;
-    private String pelanggan_akhir;
+    // variabel pelangganAwal merupakan representasi dari orang/benda saat ojek menjemput
+    private String pelangganAwal;
+    // variabel pelangganAkhir merupakan representasi dari orang/benda saat ojek selesai memberikan layanan
+    private String pelangganAkhir;
+    // variabel biaya nilai harga dari pesanan ojek
     private double biaya;
-    private TipeLayanan layanan;
-    private Lokasi lokasi_awal;
-    private Lokasi lokasi_akhir;
-    private boolean diproses;
-    private boolean dibatalkan;
+    // variabel layanan merupakan keterangan tipe layanan 
+    private String layanan;
+    // variabel lokasiAwal merupakan instance dari class Lokasi sebagai representasi posisi awal user
+    private Lokasi lokasiAwal;
+    // variabel lokasiAkhir merupakan instance dari class Lokasi sebagai representasi posisi tujuan user
+    private Lokasi lokasiAkhir;
+    // variabel diproses menentukan apakah pesanan sedang dalam proses atau tidak
+    private boolean diproses = false;
+    // variabel dibatalkan menentukan apakah pesanan dibatalkan atau tidak
+    private boolean dibatalkan = false;
 
     /**
-     * Constructor for objects of class Pesanan
+     * Kontruktor kelas Pesanan
+     * 
+     * @param       pengguna        User yang memesan layanan ojek
+     * @param       layanan         Tipe layanan yang dipesan
+     * @param       lokasiAwal      Lokasi awal pesanan
+     * @param       lokasiAkhir     Lokasi tujuan pesanan
+     * @param       pelangganAwal   representasi dari orang/benda saat ojek menjemput  
+     * @param       pelangganAkhir  representasi dari orang/benda saat ojek selesai memberikan layanan
+     * @param       biaya           harga pesanan yang ditawarkan   
+     * 
+     * @return      none            nothing
+     * 
      */
-    public Pesanan()
+    public Pesanan(Pelanggan pengguna, String layanan, Lokasi lokasiAwal, Lokasi lokasiAkhir, String pelangganAwal, String pelangganAkhir, double biaya)
     {
-        // initialise instance variables
+        /* Konstruktor Pesanan akan berperan sebagai inisiasi variabel dan instance Lokasi ketika Objek Pesanan dibuat
+         * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
+         * Setiap parameter harus diisi dengan nilai paling tidak null atau 0
+         * Setiap parameter akan memberikan nilai ke field class akesor private
+         */
+        // nilai parameter pengguna akan di berikan ke variabel class this.pengguna
+        this.pengguna = pengguna;
+        // nilai parameter layanan akan di berikan ke variabel class this.layanan
+        this.layanan = layanan;
+        // nilai parameter lokasiAwal akan di berikan ke variabel class this.lokasiAwal
+        this.lokasiAwal = lokasiAwal;
+        // nilai parameter lokasiAkhir akan di berikan ke variabel class this.lokasiAkhir
+        this.lokasiAkhir = lokasiAkhir;
+        // nilai parameter pelangganAwal akan di berikan ke variabel class this.pelangganAwal
+        this.pelangganAwal = pelangganAwal;
+        // nilai parameter pelangganAkhir akan di berikan ke variabel class this.pelangganAkhir
+        this.pelangganAkhir = pelangganAkhir;
+        // nilai parameter biaya akan di berikan ke variabel class this.biaya
+        this.biaya = biaya;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Getter status dari pesanan
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param       none            nothing 
+     * 
+     * @return      Boolean         false
+     * 
      */
     public boolean getStatusPesanan()
     {
-        // put your code here
+        /* 
+         * Method ini memberikan informasi mengenai status dari pesanan 
+         */
         return false;
     }
     
+    /**
+     * Melakukan reserve dari permintaan pesanan yang dilakukan oleh ojek
+     * 
+     * @param       pelayan         instance dari class Ojek sebagai representasi pengemudi 
+     * 
+     * @return      none            nothing
+     * 
+     */
     public void pesananDiambil(Ojek pelayan)
     {
-        // put your code here
+        /* 
+         * Melakukan reserve dari permintaan pesanan yang dilakukan oleh ojek 
+         */
     }
     
-    public String getPelanggan()
+    /**
+     * Getter pelanggan dari instance pengguna
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      pengguna        instance dari class Pengguna sebagai representasi user ojeKampus
+     * 
+     */
+    public Pelanggan getPelanggan()
     {
-        // put your code here
-        return "";
+        /* 
+         * Method ini mengembalikan instance Pelanggan dari pesanan 
+         */
+        return pengguna;
     }
     
-    public String getOjek()
+    /**
+     * Getter ojek dari instance pelayan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      pelayan         instance dari class Ojek sebagai representasi pengemudi
+     * 
+     */
+    public Ojek getOjek()
     {
-        // put your code here
-        return "";
+        /* 
+         * Method ini mengembalikan instance Ojek dari pesanan 
+         */
+        return pelayan;
     }
     
+    /**
+     * Pembatalan pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      none            nothing
+     * 
+     */
     public void pesananDibatalkan()
     {
-        // put your code here
+        /* 
+         * Method ini melakukan pembatalan pesanan
+         * variabel dibatalkan akan dirubah nilainya menjadi true
+         */
     }
     
-    public String getLokasiAwal()
+    /**
+     * Getter LokasiAwal dari pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      lokasiAwal      Lokasi awal pesanan
+     * 
+     */
+    public Lokasi getLokasiAwal()
     {
-        // put your code here
-        return "";
+        /* 
+         * Method ini mengembalikan instance Lokasi dari pesanan sebagai representasi posisi awal pesanan
+         */
+        return lokasiAwal;
     }
     
-    public String getLokasiAkhir()
+    /**
+     * Getter LokasiAwal dari pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      lokasiAwal      Lokasi akhir pesanan
+     * 
+     */
+    public Lokasi getLokasiAkhir()
     {
-        // put your code here
-        return "";
+        /* 
+         * Method ini mengembalikan instance Lokasi dari pesanan sebagai representasi posisi akhir pesanan
+         */
+        return lokasiAkhir;
     }
     
+    /**
+     * Getter layanan dari pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      layanan         Tipe layanan yang dipesan
+     * 
+     */
     public String getTipeLayanan()
     {
-        // put your code here
-        return "";
+        /* 
+         * Method ini mengembalikan tipe layanan dari pesanan
+         * Apakah itu antarBarang, antarOrang, atau beliBarang  
+         */
+        return layanan;
     }
     
+    /**
+     * Getter pengguna awal dari pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      pelangganAwal   representasi dari orang/benda saat ojek menjemput
+     * 
+     */
     public String getPenggunaAwal()
     {
-        // put your code here
-        return "";
+        /* 
+         * Method ini mengembalikan string pengguna awal dari pesanan  
+         */
+        return pelangganAwal;
     }
     
+    /**
+     * Getter pengguna akhir dari pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      pelangganAkhir   representasi dari orang/benda saat ojek selesai memberikan layanan
+     * 
+     */
     public String getPenggunaAkhir()
     {
-        // put your code here
-        return "";
+        /* 
+         * Method ini mengembalikan string pengguna akhir dari pesanan  
+         */
+        return pelangganAkhir;
     }
     
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
     public double getBiaya()
     {
-        // put your code here
-        return 0;
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        return biaya;
     }
     
-    public String toString()
+    /**
+     * Method ini menampilkan nama lokasi awal, nama lokasi akhir dan tipe layanan
+     * 
+     * @param        none           nothing
+     * @return       none 
+     */
+    public void printData()
     {
-        // put your code here
-        return "";
+        /*
+         * Method ini menampilkan nama lokasi awal, nama lokasi akhir dan tipe layanan 
+         */
+        // method dari instance lokasiAwal akan mengembalikan nama lokasi sebagai input argumen dari method print
+        System.out.println("Lokasi pelanggan awal : " + lokasiAwal.getNama());
+        // method dari instance lokasiAkhir akan mengembalikan nama lokasi sebagai input argumen dari method print
+        System.out.println("Lokasi pelanggan akhir : " + lokasiAkhir.getNama());
+        // variabel layanan akan memberikan nilai tipe layanan yang digunakan
+        System.out.println("Tipe layanan : " + layanan);
     }
 }

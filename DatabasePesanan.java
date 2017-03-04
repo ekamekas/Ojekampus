@@ -1,56 +1,73 @@
 
 /**
- * Write a description of class DatabasePesanan here.
+ * Kelas DatabasePesanan menyimpan data setiap pesanan yang dibuat akibat user dari sistem ojeKampus
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Mas Eka Setiawan 
+ * @version 2017.3.3
  */
 public class DatabasePesanan
 {
-    // instance variables - replace the example below with your own
-    private String[] listPesanan;
+    // setiap variabel hanya dapat diakses oleh DatabasePesanan saja
+    // listPesanan menyimpan data - data dari seluruh instance pesanan yang ditambahkan
+    private static Pesanan listPesanan;
 
     /**
-     * An example of a method - replace this comment with your own
+     * Penambahan pesanan baru ke dalam list
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param       pesan           pesanan layanan ojek
+     * 
+     * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
+     * 
      */
-    public boolean addPesanan(Pesanan pesan)
+    public static boolean addPesanan(Pesanan pesan)
     {
-        // put your code here
-        return false;
+        /* 
+         * Method melakukan referensi instance Pesanan melalui parameter pesan
+         */
+        listPesanan = pesan;
+        return true;
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Penghapusan pesanan dari dalam list
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param       pesan           pesanan layanan ojek
+     * 
+     * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
+     * 
      */
-    public boolean hapusPesanan(Pesanan pesan)
+    public static boolean hapusPesanan(Pesanan pesan)
     {
-        // put your code here
-        return false;
+        /* 
+         * Method melakukan dereferensi instance Pesanan melalui parameter 
+         */
+        listPesanan = null;
+        return true;
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Getter pesanan - pesanan melalui list
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param       none            nothing
+     * 
+     * @return      listPesanan     menyimpan data - data dari seluruh instance pesanan yang ditambahkan
+     * 
      */
-    public String getPesanan(Pelanggan pengguna)
+    public static Pesanan getPesanan()
     {
-        // put your code here
-        return "";
+        /* 
+         * Method mengembalikan daftar pesanan 
+         */
+        return listPesanan;
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Getter database
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param       none            nothing
+     * 
+     * @return      -               -
+     * 
      */
     public String getDatabase()
     {
@@ -59,10 +76,12 @@ public class DatabasePesanan
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Membatalkan pesanan
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param       none            nothing
+     * 
+     * @return      -               -
+     * 
      */
     public void pesananDibatalkan(Pesanan pesan)
     {
@@ -70,10 +89,12 @@ public class DatabasePesanan
     }
     
     /**
-     * An example of a method - replace this comment with your own
+     * Membatalkan pesanan dari sisi pengguna
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param       none            nothing
+     * 
+     * @return      -               -
+     * 
      */
     public void pesananDibatalkan(Pelanggan pengguna)
     {

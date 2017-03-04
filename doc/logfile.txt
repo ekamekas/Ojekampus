@@ -1,0 +1,124 @@
+Project documentation
+<---- javadoc command: ---->
+C:\Program Files\Java\jdk1.8.0_102\bin\javadoc.exe
+-sourcepath
+C:\Users\USER\Documents\GitHub\Ojekampus
+-source
+1.8
+-classpath
+F:\Programs\BlueJ\lib\bluejcore.jar;F:\Programs\BlueJ\lib\junit-4.8.2.jar;F:\Programs\BlueJ\lib\userlib\pi4j-core.jar;F:\Programs\BlueJ\lib\userlib\pi4j-device.jar;F:\Programs\BlueJ\lib\userlib\pi4j-gpio-extension.jar;F:\Programs\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\USER\Documents\GitHub\Ojekampus
+-d
+C:\Users\USER\Documents\GitHub\Ojekampus\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+F:\Programs\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+-doctitle
+Ojekampus
+-windowtitle
+Ojekampus
+-author
+-version
+-nodeprecated
+-package
+-link
+http://download.oracle.com/javase/8/docs/api/
+C:\Users\USER\Documents\GitHub\Ojekampus/Lokasi.java
+C:\Users\USER\Documents\GitHub\Ojekampus/Ojek.java
+C:\Users\USER\Documents\GitHub\Ojekampus/OjeKampus.java
+C:\Users\USER\Documents\GitHub\Ojekampus/Pesanan.java
+C:\Users\USER\Documents\GitHub\Ojekampus/DatabaseUser.java
+C:\Users\USER\Documents\GitHub\Ojekampus/DatabasePesanan.java
+C:\Users\USER\Documents\GitHub\Ojekampus/Pelanggan.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\USER\Documents\GitHub\Ojekampus\Lokasi.java...
+Loading source file C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java...
+Loading source file C:\Users\USER\Documents\GitHub\Ojekampus\OjeKampus.java...
+Loading source file C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java...
+Loading source file C:\Users\USER\Documents\GitHub\Ojekampus\DatabaseUser.java...
+Loading source file C:\Users\USER\Documents\GitHub\Ojekampus\DatabasePesanan.java...
+Loading source file C:\Users\USER\Documents\GitHub\Ojekampus\Pelanggan.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_102
+Building tree for all the packages and classes...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\DatabasePesanan.html...
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabasePesanan.java:72: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabasePesanan.java:56: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabasePesanan.java:99: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabasePesanan.java:99: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabasePesanan.java:86: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabasePesanan.java:86: warning - @return tag cannot be used in method with void return type.
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\DatabaseUser.html...
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabaseUser.java:94: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabaseUser.java:110: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabaseUser.java:170: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabaseUser.java:126: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\DatabaseUser.java:154: warning - @param argument "none" is not a parameter name.
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\Lokasi.html...
+C:\Users\USER\Documents\GitHub\Ojekampus\Lokasi.java:33: warning - Tag @return cannot be used in constructor documentation.  It can only be used in the following types of documentation: method.
+C:\Users\USER\Documents\GitHub\Ojekampus\Lokasi.java:92: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Lokasi.java:80: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Lokasi.java:56: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Lokasi.java:68: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Lokasi.java:152: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Lokasi.java:136: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Lokasi.java:104: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Lokasi.java:120: warning - @return tag cannot be used in method with void return type.
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\Ojek.html...
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:36: warning - Tag @return cannot be used in constructor documentation.  It can only be used in the following types of documentation: method.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:133: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:145: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:157: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:169: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:181: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:193: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:193: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:57: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:70: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:86: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:102: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Ojek.java:118: warning - @return tag cannot be used in method with void return type.
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\OjeKampus.html...
+C:\Users\USER\Documents\GitHub\Ojekampus\OjeKampus.java:39: warning - @return tag cannot be used in method with void return type.
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\Pelanggan.html...
+C:\Users\USER\Documents\GitHub\Ojekampus\Pelanggan.java:24: warning - Tag @return cannot be used in constructor documentation.  It can only be used in the following types of documentation: method.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pelanggan.java:43: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pelanggan.java:56: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pelanggan.java:101: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pelanggan.java:101: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pelanggan.java:69: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pelanggan.java:85: warning - @return tag cannot be used in method with void return type.
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\Pesanan.html...
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:46: warning - Tag @return cannot be used in constructor documentation.  It can only be used in the following types of documentation: method.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:237: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:172: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:156: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:124: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:108: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:221: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:205: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:77: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:188: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:93: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:140: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:140: warning - @return tag cannot be used in method with void return type.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:251: warning - @param argument "none" is not a parameter name.
+C:\Users\USER\Documents\GitHub\Ojekampus\Pesanan.java:251: warning - @return tag cannot be used in method with void return type.
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\package-frame.html...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\package-summary.html...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\package-tree.html...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\constant-values.html...
+Building index for all the packages and classes...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\overview-tree.html...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\index-all.html...
+Building index for all classes...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\allclasses-frame.html...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\allclasses-noframe.html...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\index.html...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\help-doc.html...
+Generating C:\Users\USER\Documents\GitHub\Ojekampus\doc\stylesheet.css...
+56 warnings
