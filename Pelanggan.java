@@ -1,4 +1,4 @@
-
+    
 /**
  * Kelas Pelanggan menangani data user dari sistem ojeKampus
  * 
@@ -10,7 +10,7 @@ public class Pelanggan
     // variabel id hanya dapat diakses oleh Pelanggan
     private int id;
     // variabel nama hanya dapat diakses oleh Pelanggan
-    private String nama;
+    private String nama, telefon, email, dob;
 
     /**
      * Konstruktor dari kelas Pelanggan
@@ -53,11 +53,50 @@ public class Pelanggan
      * @param       none             nothing
      * @return      nama             mengembalikan nama pengemudi ojek 
      */
+    public String getDOB()
+    {
+        // Method ini akan mengembalikan nilai variabel class nama berupa String
+        // variabel nama merupakan nama dari pelanggan
+        return dob;
+    }
+    
+    /**
+     * Getter nama pelanggan ojek
+     * 
+     * @param       none             nothing
+     * @return      nama             mengembalikan nama pengemudi ojek 
+     */
     public String getNama()
     {
         // Method ini akan mengembalikan nilai variabel class nama berupa String
         // variabel nama merupakan nama dari pelanggan
         return nama;
+    }
+    
+    /**
+     * Getter nama pelanggan ojek
+     * 
+     * @param       none             nothing
+     * @return      nama             mengembalikan nama pengemudi ojek 
+     */
+    public String getTelefon()
+    {
+        // Method ini akan mengembalikan nilai variabel class nama berupa String
+        // variabel nama merupakan nama dari pelanggan
+        return telefon;
+    }
+    
+    /**
+     * Getter nama pelanggan ojek
+     * 
+     * @param       none             nothing
+     * @return      nama             mengembalikan nama pengemudi ojek 
+     */
+    public String getEmail()
+    {
+        // Method ini akan mengembalikan nilai variabel class nama berupa String
+        // variabel nama merupakan nama dari pelanggan
+        return email;
     }
     
     /**
@@ -82,6 +121,22 @@ public class Pelanggan
      * @param       nama            nama pengemudi yang akan diset
      * @return      none            nothing 
      */
+    public void setDOB(String dob)
+    {
+        /* 
+         * Method ini akan mem-passing parameter id ke variabel nama
+         * nilai this.nama akan digantikan dengan nilai variabel nama
+         */
+        // this.id merupakan penamaan alternatif dari variabel class nama   
+        this.dob = dob;
+    }
+    
+    /**
+     * Setter nama pelanggan ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
     public void setNama(String nama)
     {
         /* 
@@ -90,6 +145,32 @@ public class Pelanggan
          */
         // this.id merupakan penamaan alternatif dari variabel class nama   
         this.nama = nama;
+    }
+    
+    /**
+     * Getter nama pelanggan ojek
+     * 
+     * @param       none             nothing
+     * @return      nama             mengembalikan nama pengemudi ojek 
+     */
+    public void setTelefon(String telefon)
+    {
+        // Method ini akan mengembalikan nilai variabel class nama berupa String
+        // variabel nama merupakan nama dari pelanggan
+        this.telefon = telefon;
+    }
+    
+    /**
+     * Getter nama pelanggan ojek
+     * 
+     * @param       none             nothing
+     * @return      nama             mengembalikan nama pengemudi ojek 
+     */
+    public void setEmail(String email)
+    {
+        // Method ini akan mengembalikan nilai variabel class nama berupa String
+        // variabel nama merupakan nama dari pelanggan
+        this.email = email;
     }
     
     /**

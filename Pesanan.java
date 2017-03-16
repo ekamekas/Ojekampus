@@ -19,13 +19,15 @@ public class Pesanan
     // variabel biaya nilai harga dari pesanan ojek
     private double biaya;
     // variabel layanan merupakan keterangan tipe layanan 
-    private String layanan;
+    private TipeLayanan layanan;
     // variabel lokasiAwal merupakan instance dari class Lokasi sebagai representasi posisi awal user
     private Lokasi lokasiAwal;
     // variabel lokasiAkhir merupakan instance dari class Lokasi sebagai representasi posisi tujuan user
     private Lokasi lokasiAkhir;
     // variabel diproses menentukan apakah pesanan sedang dalam proses atau tidak
     private boolean diproses = false;
+    // variabel dibatalkan menentukan apakah pesanan dibatalkan atau tidak
+    private boolean selesai = false;
     // variabel dibatalkan menentukan apakah pesanan dibatalkan atau tidak
     private boolean dibatalkan = false;
 
@@ -43,7 +45,81 @@ public class Pesanan
      * @return      none            nothing
      * 
      */
-    public Pesanan(Pelanggan pengguna, String layanan, Lokasi lokasiAwal, Lokasi lokasiAkhir, String pelangganAwal, String pelangganAkhir, double biaya)
+    public Pesanan(Pelanggan pengguna, TipeLayanan layanan, Lokasi lokasiAwal, Lokasi lokasiAkhir, String pelangganAwal)
+    {
+        /* Konstruktor Pesanan akan berperan sebagai inisiasi variabel dan instance Lokasi ketika Objek Pesanan dibuat
+         * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
+         * Setiap parameter harus diisi dengan nilai paling tidak null atau 0
+         * Setiap parameter akan memberikan nilai ke field class akesor private
+         */
+        // nilai parameter pengguna akan di berikan ke variabel class this.pengguna
+        this.pengguna = pengguna;
+        // nilai parameter layanan akan di berikan ke variabel class this.layanan
+        this.layanan = layanan;
+        // nilai parameter lokasiAwal akan di berikan ke variabel class this.lokasiAwal
+        this.lokasiAwal = lokasiAwal;
+        // nilai parameter lokasiAkhir akan di berikan ke variabel class this.lokasiAkhir
+        this.lokasiAkhir = lokasiAkhir;
+        // nilai parameter pelangganAwal akan di berikan ke variabel class this.pelangganAwal
+        this.pelangganAwal = pelangganAwal;
+        // nilai parameter pelangganAkhir akan di berikan ke variabel class this.pelangganAkhir
+        this.pelangganAkhir = pelangganAkhir;
+        // nilai parameter biaya akan di berikan ke variabel class this.biaya
+        this.biaya = biaya;
+    }
+    
+    /**
+     * Kontruktor kelas Pesanan
+     * 
+     * @param       pengguna        User yang memesan layanan ojek
+     * @param       layanan         Tipe layanan yang dipesan
+     * @param       lokasiAwal      Lokasi awal pesanan
+     * @param       lokasiAkhir     Lokasi tujuan pesanan
+     * @param       pelangganAwal   representasi dari orang/benda saat ojek menjemput  
+     * @param       pelangganAkhir  representasi dari orang/benda saat ojek selesai memberikan layanan
+     * @param       biaya           harga pesanan yang ditawarkan   
+     * 
+     * @return      none            nothing
+     * 
+     */
+    public Pesanan(Pelanggan pengguna, TipeLayanan layanan, Lokasi lokasiAwal, Lokasi lokasiAkhir, String pelangganAwal, String pelangganAkhir)
+    {
+        /* Konstruktor Pesanan akan berperan sebagai inisiasi variabel dan instance Lokasi ketika Objek Pesanan dibuat
+         * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
+         * Setiap parameter harus diisi dengan nilai paling tidak null atau 0
+         * Setiap parameter akan memberikan nilai ke field class akesor private
+         */
+        // nilai parameter pengguna akan di berikan ke variabel class this.pengguna
+        this.pengguna = pengguna;
+        // nilai parameter layanan akan di berikan ke variabel class this.layanan
+        this.layanan = layanan;
+        // nilai parameter lokasiAwal akan di berikan ke variabel class this.lokasiAwal
+        this.lokasiAwal = lokasiAwal;
+        // nilai parameter lokasiAkhir akan di berikan ke variabel class this.lokasiAkhir
+        this.lokasiAkhir = lokasiAkhir;
+        // nilai parameter pelangganAwal akan di berikan ke variabel class this.pelangganAwal
+        this.pelangganAwal = pelangganAwal;
+        // nilai parameter pelangganAkhir akan di berikan ke variabel class this.pelangganAkhir
+        this.pelangganAkhir = pelangganAkhir;
+        // nilai parameter biaya akan di berikan ke variabel class this.biaya
+        this.biaya = biaya;
+    }
+    
+    /**
+     * Kontruktor kelas Pesanan
+     * 
+     * @param       pengguna        User yang memesan layanan ojek
+     * @param       layanan         Tipe layanan yang dipesan
+     * @param       lokasiAwal      Lokasi awal pesanan
+     * @param       lokasiAkhir     Lokasi tujuan pesanan
+     * @param       pelangganAwal   representasi dari orang/benda saat ojek menjemput  
+     * @param       pelangganAkhir  representasi dari orang/benda saat ojek selesai memberikan layanan
+     * @param       biaya           harga pesanan yang ditawarkan   
+     * 
+     * @return      none            nothing
+     * 
+     */
+    public Pesanan(Pelanggan pengguna, TipeLayanan layanan, Lokasi lokasiAwal, Lokasi lokasiAkhir, String pelangganAwal, String pelangganAkhir, double biaya)
     {
         /* Konstruktor Pesanan akan berperan sebagai inisiasi variabel dan instance Lokasi ketika Objek Pesanan dibuat
          * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
@@ -80,6 +156,38 @@ public class Pesanan
          * Method ini memberikan informasi mengenai status dari pesanan 
          */
         return false;
+    }
+
+    /**
+     * Getter status dari pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      Boolean         false
+     * 
+     */
+    public boolean getStatusDiproses()
+    {
+        /* 
+         * Method ini memberikan informasi mengenai status dari pesanan 
+         */
+        return diproses;
+    }
+    
+    /**
+     * Getter status dari pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      Boolean         false
+     * 
+     */
+    public boolean getStatusSelesai()
+    {
+        /* 
+         * Method ini memberikan informasi mengenai status dari pesanan 
+         */
+        return selesai;
     }
     
     /**
@@ -121,7 +229,7 @@ public class Pesanan
      * @return      pelayan         instance dari class Ojek sebagai representasi pengemudi
      * 
      */
-    public Ojek getOjek()
+    public Ojek getPelayan()
     {
         /* 
          * Method ini mengembalikan instance Ojek dari pesanan 
@@ -185,7 +293,7 @@ public class Pesanan
      * @return      layanan         Tipe layanan yang dipesan
      * 
      */
-    public String getTipeLayanan()
+    public TipeLayanan getTipeLayanan()
     {
         /* 
          * Method ini mengembalikan tipe layanan dari pesanan
@@ -240,6 +348,166 @@ public class Pesanan
          * Method ini mengembalikan nilai biaya dari pesanan  
          */
         return biaya;
+    }
+    
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
+    public void setPelayan(Ojek pelayan)
+    {
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        this.pelayan = pelayan;
+    }
+    
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
+    public void setPelanggan(Pelanggan pengguna)
+    {
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        this.pengguna = pengguna;
+    }
+    
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
+    public void setPenggunaAwal(String pelangganAwal)
+    {
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        this.pelangganAwal = pelangganAwal;
+    }
+    
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
+    public void setPenggunaAkhir(String pelangganAkhir)
+    {
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        this.pelangganAkhir = pelangganAkhir;
+    }
+    
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
+    public void setBiaya(double biaya)
+    {
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        this.biaya = biaya;
+    }
+    
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
+    public void setTipeLayanan(TipeLayanan layanan)
+    {
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        this.layanan = layanan;
+    }
+    
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
+    public void setLokasiAwal(Lokasi lokasiAwal)
+    {
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        this.lokasiAwal = lokasiAwal;
+    }
+    
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
+    public void setLokasiAkhir(Lokasi lokasiAkhir)
+    {
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        this.lokasiAkhir = lokasiAkhir;
+    }
+    
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
+    public void setStatusDiproses(Boolean diproses)
+    {
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        this.diproses = diproses;
+    }
+    
+    /**
+     * Getter biaya pesanan
+     * 
+     * @param       none            nothing 
+     * 
+     * @return      biaya           nilai harga dari pesanan ojek
+     * 
+     */
+    public void setStatusSelesai(Boolean selesai)
+    {
+        /* 
+         * Method ini mengembalikan nilai biaya dari pesanan  
+         */
+        this.selesai = selesai;
     }
     
     /**

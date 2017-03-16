@@ -13,7 +13,7 @@ public class Ojek
 {
     // setiap variabel hanya dapat diakses oleh Ojek saja
     // status menentukan apakah ojek sudah di-book atau tidak
-    private String status = "idle";
+    private StatusOjek status = StatusOjek.IDLE;
     // posisiSekarang merepresentasikan lokasi ojek saat ini
     private Lokasi posisiSekarang;
     // pesanan_sekarang menyimpan informasi pesanan yang sedang diambil oleh ojek
@@ -21,7 +21,7 @@ public class Ojek
     // id merupakan nomor identitas ojek
     private int id;
     // nama merupakan nama dari pengemudi ojek
-    private String nama;
+    private String nama, telefon, email, noPlat, dob;
 
     /**
      * Kontruktor kelas ojek
@@ -78,6 +78,73 @@ public class Ojek
     }
     
     /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public Boolean setTelefon(String telefon)
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        this.telefon = telefon;
+        return true;
+    }
+    
+    /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public Boolean setEmail(String email)
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        this.email = email;
+        return true;
+    }
+    
+    /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public void setDOB(String dob)
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        this.dob = dob;
+    }
+    
+    /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public Boolean setNoPlat(String noPlat)
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        this.noPlat = noPlat;
+        return true;
+    }
+    
+    /**
      * Setter pesanan untuk pengemudi ojek
      * 
      * @param       pesan           Objek Pesanan yang diset
@@ -115,7 +182,7 @@ public class Ojek
      * @param       status          Status pengemudi ojek
      * @return      none            nothing 
      */
-    public void setStatus(String status)
+    public void setStatus(StatusOjek status)
     {
         /* 
          * Method ini akan mem-passing parameter status ke variabel status
@@ -149,6 +216,70 @@ public class Ojek
     }
     
     /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public String getTelefon()
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        return noPlat;
+    }
+    
+    /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public String getEmail()
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        return email;
+    }
+    
+    /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public String getDOB()
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        return dob;
+    }
+    
+    /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public String getNoPlat()
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        return noPlat;
+    }
+    
+    /**
      * Getter pesanan untuk pengemudi ojek
      * 
      * @param       none              nothing
@@ -178,7 +309,7 @@ public class Ojek
      * @param       none            nothing
      * @return      status          mengembalikan kondisi status dari pengemudi ojek
      */
-    public String getStatus()
+    public StatusOjek getStatus()
     {
         // Method ini akan mengembalikan nilai variabel class status 
         return status;
