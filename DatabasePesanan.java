@@ -100,4 +100,25 @@ public class DatabasePesanan
     {
         // put your code here
     }
+    
+    /**
+     * 
+     * 
+     * @param       
+     * 
+     * @return      
+     * 
+     */
+    public static void printData()
+    {
+        /* 
+         * Method melakukan dereferensi instance Pesanan melalui parameter 
+         */
+        System.out.println(listPesanan.getPenggunaAwal() + " di " + listPesanan.getLokasiAwal().getNama() + " | " + listPesanan.getPenggunaAkhir() + " di " + listPesanan.getLokasiAkhir().getNama() + " dengan layanan " + listPesanan.getTipeLayanan());
+        if(listPesanan.getStatusSelesai()){
+            System.out.println("STATUS : Selesai");
+        } else if(listPesanan.getStatusDiproses()){
+            System.out.println("STATUS : Diproses");
+        }
+    }
 }

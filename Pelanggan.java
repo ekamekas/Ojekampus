@@ -153,11 +153,12 @@ public class Pelanggan
      * @param       none             nothing
      * @return      nama             mengembalikan nama pengemudi ojek 
      */
-    public void setTelefon(String telefon)
+    public boolean setTelefon(String telefon)
     {
         // Method ini akan mengembalikan nilai variabel class nama berupa String
         // variabel nama merupakan nama dari pelanggan
         this.telefon = telefon;
+        return true;
     }
     
     /**
@@ -166,11 +167,12 @@ public class Pelanggan
      * @param       none             nothing
      * @return      nama             mengembalikan nama pengemudi ojek 
      */
-    public void setEmail(String email)
+    public Boolean setEmail(String email)
     {
         // Method ini akan mengembalikan nilai variabel class nama berupa String
         // variabel nama merupakan nama dari pelanggan
         this.email = email;
+        return true;
     }
     
     /**

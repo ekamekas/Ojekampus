@@ -521,11 +521,21 @@ public class Pesanan
         /*
          * Method ini menampilkan nama lokasi awal, nama lokasi akhir dan tipe layanan 
          */
+        // 
+        System.out.println("Nama pelanggan awal : " + pelangganAwal);
+        //
+        System.out.println("Nama pelanggan akhir : " + pelangganAkhir);
         // method dari instance lokasiAwal akan mengembalikan nama lokasi sebagai input argumen dari method print
         System.out.println("Lokasi pelanggan awal : " + lokasiAwal.getNama());
         // method dari instance lokasiAkhir akan mengembalikan nama lokasi sebagai input argumen dari method print
         System.out.println("Lokasi pelanggan akhir : " + lokasiAkhir.getNama());
         // variabel layanan akan memberikan nilai tipe layanan yang digunakan
         System.out.println("Tipe layanan : " + layanan);
+        //
+        if(getStatusSelesai()){
+            System.out.println("[+] Pesanan sudah selesai");
+        } else if(getStatusDiproses()){
+            System.out.println("[+] Pesanan sedang diproses");
+        }
     }
 }

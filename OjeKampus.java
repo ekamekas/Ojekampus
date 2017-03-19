@@ -63,8 +63,31 @@ public class OjeKampus
         p_setiawan.setNama("Mas");
         
         // Menampilkan kembali informasi
-        ojek_mas.printData();
-        p_setiawan.printData();
-        pes_setiawan.printData();
+        DatabaseUser.printData();
+        DatabasePesanan.printData();
+        
+        // Melakukan perubahan dengan class Administrasi
+        Administrasi.pesananDitugaskan(pes_setiawan, ojek_mas);
+        DatabaseUser.printData();
+        DatabasePesanan.printData();
+        
+        Administrasi.pesananDibatalkan(ojek_mas);
+        DatabaseUser.printData();
+        DatabasePesanan.printData();
+        
+        Administrasi.pesananDitugaskan(pes_setiawan, ojek_mas);
+        Administrasi.pesananSelesai(ojek_mas);
+        DatabaseUser.printData();
+        DatabasePesanan.printData();
+        
+        Administrasi.pesananDitugaskan(pes_setiawan, ojek_mas);
+        Administrasi.pesananDibatalkan(pes_setiawan);
+        DatabaseUser.printData();
+        DatabasePesanan.printData();
+        
+        Administrasi.pesananDitugaskan(pes_setiawan, ojek_mas);
+        Administrasi.pesananSelesai(pes_setiawan);
+        DatabaseUser.printData();
+        DatabasePesanan.printData();
     }
 }

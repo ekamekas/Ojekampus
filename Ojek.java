@@ -83,7 +83,7 @@ public class Ojek
      * @param       nama            nama pengemudi yang akan diset
      * @return      none            nothing 
      */
-    public Boolean setTelefon(String telefon)
+    public boolean setTelefon(String telefon)
     {
         /* 
          * Method ini akan mem-passing parameter nama ke variabel nama
@@ -100,7 +100,7 @@ public class Ojek
      * @param       nama            nama pengemudi yang akan diset
      * @return      none            nothing 
      */
-    public Boolean setEmail(String email)
+    public boolean setEmail(String email)
     {
         /* 
          * Method ini akan mem-passing parameter nama ke variabel nama
@@ -133,7 +133,7 @@ public class Ojek
      * @param       nama            nama pengemudi yang akan diset
      * @return      none            nothing 
      */
-    public Boolean setNoPlat(String noPlat)
+    public boolean setNoPlat(String noPlat)
     {
         /* 
          * Method ini akan mem-passing parameter nama ke variabel nama

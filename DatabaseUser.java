@@ -172,4 +172,21 @@ public class DatabaseUser
         // put your code here
         return "";
     }
+    
+    /**
+     * 
+     * 
+     * @param       
+     * 
+     * @return      
+     * 
+     */
+    public static void printData()
+    {
+        /* 
+         * Method melakukan dereferensi instance Pesanan melalui parameter 
+         */
+        System.out.println("Ojek dengan nama " + ojek_database.getNama() + " dan ID " + ojek_database.getID() + " memiliki status " + ojek_database.getStatus());
+        System.out.println("Pelanggan dengan nama" + pelanggan_database.getNama() + " dan ID " + pelanggan_database.getID());
+    }
 }
