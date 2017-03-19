@@ -1,4 +1,6 @@
-    
+import java.util.regex.*;
+import java.util.Date;
+
 /**
  * Kelas Pelanggan menangani data user dari sistem ojeKampus
  * 
@@ -10,7 +12,8 @@ public class Pelanggan
     // variabel id hanya dapat diakses oleh Pelanggan
     private int id;
     // variabel nama hanya dapat diakses oleh Pelanggan
-    private String nama, telefon, email, dob;
+    private String nama, telefon, email;
+    private Date dob;
 
     /**
      * Konstruktor dari kelas Pelanggan
@@ -21,7 +24,7 @@ public class Pelanggan
      * @return      none            nothing
      * 
      */
-    public Pelanggan(int id, String nama)
+    public Pelanggan(int id, String nama, Date dob)
     {
         /* Konstruktor Pelanggan akan berperan sebagai inisiasi variabel ketika Objek Pelanggan dibuat
          * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
@@ -32,8 +35,38 @@ public class Pelanggan
         this.id = id;
         // this.nama merupakan nama dari pelanggan
         this.nama = nama;
+        //
+        this.dob = dob;
+        //
+        this.telefon = "";
     }
-
+    
+    /**
+     * Konstruktor dari kelas Pelanggan
+     * 
+     * @param       id              nomor identitas pelanggan
+     * @param       nama            Nama pelanggan
+     * 
+     * @return      none            nothing
+     * 
+     */
+    public Pelanggan(int id, String nama, Date dob, String telefon)
+    {
+        /* Konstruktor Pelanggan akan berperan sebagai inisiasi variabel ketika Objek Pelanggan dibuat
+         * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
+         * Setiap parameter harus diisi dengan nilai paling tidak null atau 0
+         * Setiap parameter akan memberikan nilai ke field class akesor private
+         */
+        // this.id merupaakan nomor identitas yang merepresentasikan pelanggan
+        this.id = id;
+        // this.nama merupakan nama dari pelanggan
+        this.nama = nama;
+        //
+        this.dob = dob;
+        //
+        this.telefon = telefon;
+    }
+    
     /**
      * Getter identitas pelanggan ojek
      * 
@@ -53,7 +86,7 @@ public class Pelanggan
      * @param       none             nothing
      * @return      nama             mengembalikan nama pengemudi ojek 
      */
-    public String getDOB()
+    public Date getDOB()
     {
         // Method ini akan mengembalikan nilai variabel class nama berupa String
         // variabel nama merupakan nama dari pelanggan
@@ -121,7 +154,7 @@ public class Pelanggan
      * @param       nama            nama pengemudi yang akan diset
      * @return      none            nothing 
      */
-    public void setDOB(String dob)
+    public void setDOB(Date dob)
     {
         /* 
          * Method ini akan mem-passing parameter id ke variabel nama
@@ -157,8 +190,14 @@ public class Pelanggan
     {
         // Method ini akan mengembalikan nilai variabel class nama berupa String
         // variabel nama merupakan nama dari pelanggan
-        this.telefon = telefon;
-        return true;
+        Pattern pattern = Pattern.compile("[0-9]{11,13}");
+        Matcher matcher = pattern.matcher(telefon);
+        if(!matcher.matches()){
+            return false;
+        } else{
+            this.telefon = telefon;
+            return true;
+        }
     }
     
     /**
@@ -171,8 +210,14 @@ public class Pelanggan
     {
         // Method ini akan mengembalikan nilai variabel class nama berupa String
         // variabel nama merupakan nama dari pelanggan
-        this.email = email;
-        return true;
+        Pattern pattern = Pattern.compile(".+[@]{1}+.+[.]{1}+.+");
+        Matcher matcher = pattern.matcher(email);
+        if(matcher.matches()){
+            this.email = email;
+            return true;
+        } else{
+            return false;
+        }
     }
     
     /**
@@ -181,14 +226,15 @@ public class Pelanggan
      * @param        none           nothing
      * @return       none 
      */
-    public void printData()
+    public String toString()
     {
         /* 
          * Method ini menampilkan nomor identitas dan nama dari pelanggan
          */
-        // this.id adalah variabel class yang menyimpan nomor identitas pelanggan
-        System.out.println("ID : " + this.id);
-        // this.nama adalah variabel class yang menyimpan nama pelanggan
-        System.out.println("Nama : " + this.nama);
+        if(DatabasePesanan.getPesanan() == null){
+            return "Nama Pelanggan : " + getNama() + '\n' + "ID : " + getID() + '\n' + "No Telefon " + getTelefon() + '\n';
+        } else {
+            return "Nama Pelanggan : " + getNama() + '\n' + "ID : " + getID() + '\n' + "No Telefon " + getTelefon() + '\n' + "Pelanggan Awal : " + DatabasePesanan.getPesanan().getPenggunaAwal() + '\n';
+        }
     }
 }

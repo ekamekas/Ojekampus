@@ -1,3 +1,4 @@
+import java.util.GregorianCalendar;
 
 /**
  * OjeKampus adalah sebuah kelas untuk menjalankan sistem ojek
@@ -44,50 +45,23 @@ public class OjeKampus
          * Terdapat perubahan data yang dilakukan oleh objek
          */
         // Pembuatan objek
-        ojek_mas = new Ojek(DatabaseUser.getIDOjekTerakhir(), "Mas", new Lokasi("Kota tentram", 14, 06, "Cipocok Jaya, Kota Serang"));
-        p_setiawan = new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Setiawan");
+        ojek_mas = new Ojek(DatabaseUser.getIDOjekTerakhir(), "Mas Eka", new Lokasi("Kota tentram", 14, 06, "Cipocok Jaya, Kota Serang"), (new GregorianCalendar(1997, 05, 12).getTime()), "B123UA");
+        p_setiawan = new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Setiawan", (new GregorianCalendar(1927, 11, 28).getTime()), "081203040501");
         per_setiawan_awal = new Lokasi("Geffen", 6, 0, "Kota penyihir");
         per_setiawan_akhir = new Lokasi("Morroc", 5, 4, "Kota pencuri");
-        pes_setiawan = new Pesanan(p_setiawan, TipeLayanan.ANTAR_BARANG, per_setiawan_awal, per_setiawan_akhir, "Fajri", "Pabe", 5000);
+        pes_setiawan = new Pesanan(p_setiawan, TipeLayanan.ANTAR_BARANG, per_setiawan_awal, per_setiawan_akhir, "Fajri", "Pabe");
         // Penambahan objek ke database
         DatabaseUser.addPelanggan(p_setiawan);
         DatabaseUser.addOjek(ojek_mas);
         DatabasePesanan.addPesanan(pes_setiawan);
         
-        // Menampilkan informasi
-        ojek_mas.printData();
-        p_setiawan.printData();
+        //Administrasi.pesananDitugaskan(pes_setiawan, ojek_mas);
+        //Administrasi.pesananSelesai(pes_setiawan);
         
-        // Pengubahan data dalam objek
-        ojek_mas.setNama("Setiawan");
-        p_setiawan.setNama("Mas");
+        System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+");
         
-        // Menampilkan kembali informasi
-        DatabaseUser.printData();
-        DatabasePesanan.printData();
-        
-        // Melakukan perubahan dengan class Administrasi
-        Administrasi.pesananDitugaskan(pes_setiawan, ojek_mas);
-        DatabaseUser.printData();
-        DatabasePesanan.printData();
-        
-        Administrasi.pesananDibatalkan(ojek_mas);
-        DatabaseUser.printData();
-        DatabasePesanan.printData();
-        
-        Administrasi.pesananDitugaskan(pes_setiawan, ojek_mas);
-        Administrasi.pesananSelesai(ojek_mas);
-        DatabaseUser.printData();
-        DatabasePesanan.printData();
-        
-        Administrasi.pesananDitugaskan(pes_setiawan, ojek_mas);
-        Administrasi.pesananDibatalkan(pes_setiawan);
-        DatabaseUser.printData();
-        DatabasePesanan.printData();
-        
-        Administrasi.pesananDitugaskan(pes_setiawan, ojek_mas);
-        Administrasi.pesananSelesai(pes_setiawan);
-        DatabaseUser.printData();
-        DatabasePesanan.printData();
+        // Menampilakan informasi pada Pelayan
+        System.out.println(ojek_mas.getDOB());
+        System.out.println(p_setiawan.getDOB());
     }
 }

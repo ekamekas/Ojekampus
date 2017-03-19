@@ -62,10 +62,10 @@ public class Pesanan
         this.lokasiAkhir = lokasiAkhir;
         // nilai parameter pelangganAwal akan di berikan ke variabel class this.pelangganAwal
         this.pelangganAwal = pelangganAwal;
-        // nilai parameter pelangganAkhir akan di berikan ke variabel class this.pelangganAkhir
-        this.pelangganAkhir = pelangganAkhir;
-        // nilai parameter biaya akan di berikan ke variabel class this.biaya
-        this.biaya = biaya;
+        //
+        this.pelangganAkhir = "";
+        //
+        this.biaya = 0;
     }
     
     /**
@@ -101,8 +101,8 @@ public class Pesanan
         this.pelangganAwal = pelangganAwal;
         // nilai parameter pelangganAkhir akan di berikan ke variabel class this.pelangganAkhir
         this.pelangganAkhir = pelangganAkhir;
-        // nilai parameter biaya akan di berikan ke variabel class this.biaya
-        this.biaya = biaya;
+        //
+        this.biaya = 0;
     }
     
     /**
@@ -516,13 +516,14 @@ public class Pesanan
      * @param        none           nothing
      * @return       none 
      */
-    public void printData()
+    public String toString()
     {
         /*
          * Method ini menampilkan nama lokasi awal, nama lokasi akhir dan tipe layanan 
          */
+        String final_status = "KOSONG";
         // 
-        System.out.println("Nama pelanggan awal : " + pelangganAwal);
+        /*System.out.println("Nama pelanggan awal : " + pelangganAwal);
         //
         System.out.println("Nama pelanggan akhir : " + pelangganAkhir);
         // method dari instance lokasiAwal akan mengembalikan nama lokasi sebagai input argumen dari method print
@@ -536,6 +537,28 @@ public class Pesanan
             System.out.println("[+] Pesanan sudah selesai");
         } else if(getStatusDiproses()){
             System.out.println("[+] Pesanan sedang diproses");
+        }
+        return "";*/
+        if(getStatusDiproses() == true && getStatusSelesai() == false){
+            final_status = "DIPROSES";
+        } else if(getStatusDiproses() == false && getStatusSelesai() == false){
+            final_status = "KOSONG";
+        } else if(getStatusDiproses() == false && getStatusSelesai() == true){
+            final_status = "SELESAI";
+        }
+        
+        if(pelayan == null){
+            if(!getPenggunaAkhir().isEmpty()){
+                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getPenggunaAkhir() + " di " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + final_status + "||\n";
+            } else {
+                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + final_status + "||\n";
+            }
+        } else {
+            if(!getPenggunaAkhir().isEmpty()){
+                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getPenggunaAkhir() + " di " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + final_status + "||\n" + "Diproses oleh " + getPelayan().getNama() + '\n';
+            } else {
+                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + final_status + "||\n" + "Diproses oleh " + getPelayan().getNama() + '\n';
+            }
         }
     }
 }

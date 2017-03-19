@@ -105,7 +105,7 @@
         // put your code here
         ojekLepasPesanan(pesan.getPelayan());
         pesan.setStatusSelesai(true);
-        pesan.setStatusSelesai(false);
+        pesan.setStatusDiproses(false);
         pesan.setPelayan(null);
     }
 }

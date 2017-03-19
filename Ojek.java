@@ -1,3 +1,5 @@
+import java.util.regex.*;
+import java.util.Date;
 
 /**
  * Kelas Ojek menangani data ojek dari sistem ojeKampus
@@ -21,7 +23,8 @@ public class Ojek
     // id merupakan nomor identitas ojek
     private int id;
     // nama merupakan nama dari pengemudi ojek
-    private String nama, telefon, email, noPlat, dob;
+    private String nama, telefon, email, noPlat;
+    private Date dob;
 
     /**
      * Kontruktor kelas ojek
@@ -33,7 +36,7 @@ public class Ojek
      * @return      none            nothing
      * 
      */
-    public Ojek(int id, String nama, Lokasi posisiSekarang)
+    public Ojek(int id, String nama, Lokasi posisiSekarang, Date dob, String noPlat)
     {
         /* Konstruktor Ojek akan berperan sebagai inisiasi variabel dan instance Lokasi ketika Objek Ojek dibuat
          * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
@@ -46,6 +49,10 @@ public class Ojek
         this.nama = nama;
         // this.posisiSekarang merupaakan instance variabel dari kelas Lokasi yang merepresentasikan posisi ojek saat ini
         this.posisiSekarang = posisiSekarang;
+        //
+        this.dob = dob;
+        //
+        setNoPlat(noPlat);
     }
 
     /**
@@ -90,8 +97,14 @@ public class Ojek
          * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
          */
         // this.nama merupakan penamaan alternatif dari variabel class nama 
-        this.telefon = telefon;
-        return true;
+        Pattern pattern = Pattern.compile("[0-9]{11,13}");
+        Matcher matcher = pattern.matcher(telefon);
+        if(!matcher.matches()){
+            return false;
+        } else{
+            this.telefon = telefon;
+            return true;
+        }
     }
     
     /**
@@ -107,8 +120,15 @@ public class Ojek
          * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
          */
         // this.nama merupakan penamaan alternatif dari variabel class nama 
-        this.email = email;
-        return true;
+        Pattern pattern = Pattern.compile(".+[@]{1}+.+[.]{1}+.+");
+        Matcher matcher = pattern.matcher(email);
+        if(matcher.matches()){
+            this.email = email;
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
     /**
@@ -117,7 +137,7 @@ public class Ojek
      * @param       nama            nama pengemudi yang akan diset
      * @return      none            nothing 
      */
-    public void setDOB(String dob)
+    public void setDOB(Date dob)
     {
         /* 
          * Method ini akan mem-passing parameter nama ke variabel nama
@@ -140,8 +160,14 @@ public class Ojek
          * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
          */
         // this.nama merupakan penamaan alternatif dari variabel class nama 
-        this.noPlat = noPlat;
-        return true;
+        Pattern pattern = Pattern.compile("[A-Z]{1,2}[0-9]{1,4}[A-Z]{1,2}");
+        Matcher matcher = pattern.matcher(noPlat);
+        if(matcher.matches()){
+            this.noPlat = noPlat;
+            return true;
+        } else{
+            return false;
+        }
     }
     
     /**
@@ -253,7 +279,7 @@ public class Ojek
      * @param       nama            nama pengemudi yang akan diset
      * @return      none            nothing 
      */
-    public String getDOB()
+    public Date getDOB()
     {
         /* 
          * Method ini akan mem-passing parameter nama ke variabel nama
@@ -321,16 +347,16 @@ public class Ojek
      * @param        none           nothing
      * @return       none 
      */
-    public void printData()
+    public String toString()
     {
         /*
          * Method ini menampilkan nomor identitas, nama dan status dari 
          */
         // this.id adalah variabel class yang menyimpan nomor identitas ojek
-        System.out.println("ID : " + this.id);
-        // this.nama adalah variabel class yang menyimpan nama ojek
-        System.out.println("Nama : " + this.nama);
-        // this.status adalah variabel class yang menyimpan status ojek
-        System.out.println("Status : " + this.status);
+        if(pesanan_sekarang == null){
+            return "Nama Ojek : " + getNama() + '\n' + "ID : " + getID() + '\n' + "Plat : " + getNoPlat() + '\n' + "Status : " + getStatus() + '\n';
+        } else {
+            return "Nama Ojek : " + getNama() + '\n' + "ID : " + getID() + '\n' + "Plat : " + getNoPlat() + '\n' + "Status : " + getStatus() + '\n' + "Nama Pelanggan : " + pesanan_sekarang.getPelanggan().getNama() + '\n';
+        }
     }
 }
