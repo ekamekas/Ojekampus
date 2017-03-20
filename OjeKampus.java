@@ -61,7 +61,7 @@ public class OjeKampus
         System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+");
         
         // Menampilakan informasi pada Pelayan
-        System.out.println(ojek_mas.getDOB());
-        System.out.println(p_setiawan.getDOB());
+        System.out.printf("%1$te %1$tb,%1$tY\n", ojek_mas.getDOB());
+        System.out.printf("%1$te %1$tb,%1$tY\n", p_setiawan.getDOB());
     }
 }
