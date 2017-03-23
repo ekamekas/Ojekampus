@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Array()
+comment0.text=\r\n\ Konstruktor\ untuk\ kelas\ Array\r\n
+comment1.params=arrayInt
+comment1.target=int[]\ sortArray(int[])
+comment1.text=\r\n\ Metod\ kelas\ Array\ untuk\ melakukan\ sorting\ dari\ kecil\ ke\ besar\r\n\ \r\n\ @param\ \ arrayInt\ \ \ Sebuah\ array\ dari\ integer\r\n\ @return\ \ \ \ \ hasil\ pengurutan\ dari\ kecil\ ke\ besar\ \r\n
+comment2.params=
+comment2.target=java.util.ArrayList\ getListInt()
+comment2.text=\r\n\ Metod\ kelas\ Array\ untuk\ mengembalikan\ ArrayList\ Integer\r\n\ \r\n\ @return\ \ \ \ \ Kumpulan\ data\ Integer\ dalam\ ArrayList\ \r\n
+comment3.params=
+comment3.target=int[]\ getArrayInt()
+comment3.text=\r\n\ Metod\ kelas\ Array\ untuk\ mengembalikan\ Array\ Integer\r\n\ \r\n\ @return\ \ \ \ \ Kumpulan\ data\ Integer\ dalam\ Array\r\n
+numComments=4

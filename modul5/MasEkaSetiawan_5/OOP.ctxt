@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=OOP()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ OOP\r\n
+comment1.params=
+comment1.target=void\ sortingMahasiswa()
+comment1.text=\r\n\ Method\ untuk\ melakukan\ sorting\ List\ yang\ berisi\ Objek\ mahasisw\r\n
+comment2.params=
+comment2.target=java.util.ArrayList\ getMahasiswa()
+comment2.text=\r\n\ Getter\ List\ siswa\r\n
+comment3.params=
+comment3.target=void\ printData()
+comment3.text=\r\n\ Method\ untuk\ menampilkan\ data\ objek\ Mahasiswa\ yang\ ada\ dalam\ List\ siswa\r\n
+numComments=4
