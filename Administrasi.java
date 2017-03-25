@@ -19,6 +19,7 @@ import java.util.ListIterator;
     public static void jalankanSistemPenugas(){
         Pesanan pesan = cariPesananIdle();
         Ojek pelayan = temukanOjekTerdekat(pesan);
+        ojekAmbilPesanan(pesan, pelayan);
     }
            
     /**
@@ -49,8 +50,8 @@ import java.util.ListIterator;
     {
         // put your code here
         pelayan.setStatus(StatusOjek.IDLE);
-        pelayan.setPesanan(null);
         pelayan.getPesanan().setPelayan(null);
+        pelayan.setPesanan(null);
     }
     
     /**
@@ -64,8 +65,8 @@ import java.util.ListIterator;
         // put your code here
         pelayan.getPesanan().setStatusSelesai(false);
         pelayan.getPesanan().setStatusDiproses(false);
-        pelayan.setPesanan(null);
         ojekLepasPesanan(pelayan);
+        pelayan.setPesanan(null);
     }
     
     /**

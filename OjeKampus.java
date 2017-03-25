@@ -34,12 +34,28 @@ public class OjeKampus
         Administrasi.jalankanSistemPenugas();
         Administrasi.jalankanSistemPenugas();
         Administrasi.jalankanSistemPenugas();
+        System.out.println("Pengguna Membatalkan :");
+        Administrasi.printAllDatabase();
+        
         penggunaMembatalkan(DatabaseUser.getPelangganDatabase().get(0));
-//         ojekMembatalkan();
-//        Administrasi.ojekAmbilPesanan();
-//        ojekMengubahStatus();
-//        Administrasi.pesananSelesai();
-//        penggunaMenghapusPesanan();
+        System.out.println("Ojek Membatalkan :");
+        Administrasi.printAllDatabase();
+        
+        ojekMembatalkan(DatabasePesanan.getPesanan(DatabaseUser.getPelangganDatabase().get(1)).getPelayan());
+        System.out.println("Pengguna Membatalkan :");
+        Administrasi.printAllDatabase();
+        
+        ojekMengubahStatus(DatabasePesanan.getPesanan(DatabaseUser.getPelangganDatabase().get(2)).getPelayan());
+        System.out.println("Ojek Ubah Status :");
+        Administrasi.printAllDatabase();
+        
+        penggunaMenyelesaikanPesanan(DatabaseUser.getPelangganDatabase().get(2));
+        System.out.println("Pengguna Pesanan Selesai :");
+        Administrasi.printAllDatabase();
+        
+        penggunaMenghapusPesanan(DatabaseUser.getPelangganDatabase().get(2));
+        System.out.println("Pengguna Pesanan Selesai :");
+        Administrasi.printAllDatabase();
     }
     
     public static void antarBarang(Pelanggan pengguna){
