@@ -54,7 +54,131 @@ public class Ojek
         //
         setNoPlat(noPlat);
     }
-
+    
+    /**
+     * Getter identitas pengemudi ojek
+     * 
+     * @param       none            nothing
+     * @return      id              mengembalikan nilai nomor identitas
+     */
+    public int getID()
+    {
+        // Method ini akan mengembalikan nilai variabel class id
+        return id;
+    }
+    
+    /**
+     * Getter nama pengemudi ojek
+     * 
+     * @param       none             nothing
+     * @return      nama             mengembalikan nama pengemudi ojek 
+     */
+    public String getNama()
+    {
+        // Method ini akan mengembalikan nilai variabel class nama berupa String 
+        return nama;
+    }
+    
+    /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public String getTelefon()
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        return noPlat;
+    }
+    
+    /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public String getEmail()
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        return email;
+    }
+    
+    /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public Date getDOB()
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        return dob;
+    }
+    
+    /**
+     * Setter nama pengemudi ojek
+     * 
+     * @param       nama            nama pengemudi yang akan diset
+     * @return      none            nothing 
+     */
+    public String getNoPlat()
+    {
+        /* 
+         * Method ini akan mem-passing parameter nama ke variabel nama
+         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
+         */
+        // this.nama merupakan penamaan alternatif dari variabel class nama 
+        return noPlat;
+    }
+    
+    /**
+     * Getter pesanan untuk pengemudi ojek
+     * 
+     * @param       none              nothing
+     * @return      pesanan_sekarang  mengembalikan nilai objek Pesanan 
+     */
+    public Pesanan getPesanan()
+    {
+        // Method ini akan mengembalikan nilai instance variabel class pesanan_sekarang 
+        return pesanan_sekarang;
+    }
+    
+    /**
+     * Getter lokasi sekarang pengemudi ojek
+     * 
+     * @param       none            nothing
+     * @return      posisiSekarang  mengembalikan Objek Lokasi yang memiliki informasi posisi pengemudi ojek sekarang 
+     */
+    public Lokasi getPosisi()
+    {
+        // Method ini akan mengembalikan nilai instance variabel class posisiSekarang 
+        return posisiSekarang;
+    }
+    
+    /**
+     * Getter status dari ojek
+     * 
+     * @param       none            nothing
+     * @return      status          mengembalikan kondisi status dari pengemudi ojek
+     */
+    public StatusOjek getStatus()
+    {
+        // Method ini akan mengembalikan nilai variabel class status 
+        return status;
+    }
+    
     /**
      * Setter identitas pengemudi ojek
      * 
@@ -215,131 +339,7 @@ public class Ojek
          * Nilai dari variabel class posisiSekarang akan dirubah oleh nilai apapun yang di pass lewat parameter
          */
         this.status = status;
-    }
-    
-    /**
-     * Getter identitas pengemudi ojek
-     * 
-     * @param       none            nothing
-     * @return      id              mengembalikan nilai nomor identitas
-     */
-    public int getID()
-    {
-        // Method ini akan mengembalikan nilai variabel class id
-        return id;
-    }
-    
-    /**
-     * Getter nama pengemudi ojek
-     * 
-     * @param       none             nothing
-     * @return      nama             mengembalikan nama pengemudi ojek 
-     */
-    public String getNama()
-    {
-        // Method ini akan mengembalikan nilai variabel class nama berupa String 
-        return nama;
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public String getTelefon()
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        return noPlat;
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public String getEmail()
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        return email;
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public Date getDOB()
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        return dob;
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public String getNoPlat()
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        return noPlat;
-    }
-    
-    /**
-     * Getter pesanan untuk pengemudi ojek
-     * 
-     * @param       none              nothing
-     * @return      pesanan_sekarang  mengembalikan nilai objek Pesanan 
-     */
-    public Pesanan getPesanan()
-    {
-        // Method ini akan mengembalikan nilai instance variabel class pesanan_sekarang 
-        return pesanan_sekarang;
-    }
-    
-    /**
-     * Getter lokasi sekarang pengemudi ojek
-     * 
-     * @param       none            nothing
-     * @return      posisiSekarang  mengembalikan Objek Lokasi yang memiliki informasi posisi pengemudi ojek sekarang 
-     */
-    public Lokasi getPosisi()
-    {
-        // Method ini akan mengembalikan nilai instance variabel class posisiSekarang 
-        return posisiSekarang;
-    }
-    
-    /**
-     * Getter status dari ojek
-     * 
-     * @param       none            nothing
-     * @return      status          mengembalikan kondisi status dari pengemudi ojek
-     */
-    public StatusOjek getStatus()
-    {
-        // Method ini akan mengembalikan nilai variabel class status 
-        return status;
-    }
+    }   
     
     /**
      * Print informasi identitas, nama, dan status dari ojek

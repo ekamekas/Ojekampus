@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Kelas DatabasePesanan menyimpan data setiap pesanan yang dibuat akibat user dari sistem ojeKampus
@@ -9,7 +10,7 @@ public class DatabasePesanan
 {
     // setiap variabel hanya dapat diakses oleh DatabasePesanan saja
     // listPesanan menyimpan data - data dari seluruh instance pesanan yang ditambahkan
-    private static Pesanan listPesanan;
+    private static ArrayList<Pesanan> listPesanan = new ArrayList<Pesanan>();
 
     /**
      * Penambahan pesanan baru ke dalam list
@@ -24,8 +25,77 @@ public class DatabasePesanan
         /* 
          * Method melakukan referensi instance Pesanan melalui parameter pesan
          */
-        listPesanan = pesan;
+        if(listPesanan != null){
+            for(Pesanan listPesan : listPesanan){
+                if(listPesan.getPelanggan() == pesan.getPelanggan()){
+                    return false;
+                }
+            }
+        }
+        listPesanan.add(pesan);
         return true;
+    }   
+    
+    /**
+     * Getter database
+     * 
+     * @param       none            nothing
+     * 
+     * @return      -               -
+     * 
+     */
+    public static ArrayList<Pesanan> getDatabase()
+    {
+        // put your code here
+        return listPesanan;
+    }
+    
+    /**
+     * Getter pesanan - pesanan melalui list
+     * 
+     * @param       none            nothing
+     * 
+     * @return      listPesanan     menyimpan data - data dari seluruh instance pesanan yang ditambahkan
+     * 
+     */
+    public static Pesanan getPesanan(Pelanggan pengguna)
+    {
+        /* 
+         * Method mengembalikan daftar pesanan 
+         */
+        if(listPesanan != null){
+            for(Pesanan pesan : listPesanan){
+                if(pesan.getPelanggan() == pengguna)
+                    return pesan;
+            }
+        }
+        return null;
+    }
+    
+    /**
+     * Penghapusan pesanan dari dalam list
+     * 
+     * @param       pesan           pesanan layanan ojek
+     * 
+     * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
+     * 
+     */
+    public static boolean hapusPesanan(Pelanggan pengguna)
+    {
+        /* 
+         * Method melakukan dereferensi instance Pesanan melalui parameter 
+         */
+        if(!listPesanan.isEmpty()){
+            for(Pesanan listPesan : listPesanan){
+                if(listPesan.getPelanggan() == pengguna){
+                    if(listPesan.getPelayan() != null){
+                        Administrasi.pesananSelesai(pengguna);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
     
     /**
@@ -41,84 +111,16 @@ public class DatabasePesanan
         /* 
          * Method melakukan dereferensi instance Pesanan melalui parameter 
          */
-        listPesanan = null;
-        return true;
-    }
-    
-    /**
-     * Getter pesanan - pesanan melalui list
-     * 
-     * @param       none            nothing
-     * 
-     * @return      listPesanan     menyimpan data - data dari seluruh instance pesanan yang ditambahkan
-     * 
-     */
-    public static Pesanan getPesanan()
-    {
-        /* 
-         * Method mengembalikan daftar pesanan 
-         */
-        return listPesanan;
-    }
-    
-    /**
-     * Getter database
-     * 
-     * @param       none            nothing
-     * 
-     * @return      -               -
-     * 
-     */
-    public String getDatabase()
-    {
-        // put your code here
-        return "";
-    }
-    
-    /**
-     * Membatalkan pesanan
-     * 
-     * @param       none            nothing
-     * 
-     * @return      -               -
-     * 
-     */
-    public void pesananDibatalkan(Pesanan pesan)
-    {
-        // put your code here
-    }
-    
-    /**
-     * Membatalkan pesanan dari sisi pengguna
-     * 
-     * @param       none            nothing
-     * 
-     * @return      -               -
-     * 
-     */
-    public void pesananDibatalkan(Pelanggan pengguna)
-    {
-        // put your code here
-    }
-    
-    /**
-     * 
-     * 
-     * @param       
-     * 
-     * @return      
-     * 
-     */
-    public static void printData()
-    {
-        /* 
-         * Method melakukan dereferensi instance Pesanan melalui parameter 
-         */
-        System.out.println(listPesanan.getPenggunaAwal() + " di " + listPesanan.getLokasiAwal().getNama() + " | " + listPesanan.getPenggunaAkhir() + " di " + listPesanan.getLokasiAkhir().getNama() + " dengan layanan " + listPesanan.getTipeLayanan());
-        if(listPesanan.getStatusSelesai()){
-            System.out.println("STATUS : Selesai");
-        } else if(listPesanan.getStatusDiproses()){
-            System.out.println("STATUS : Diproses");
+        if(!listPesanan.isEmpty()){
+            for(Pesanan listPesan : listPesanan){
+                if(pesan == listPesan){
+                    if(listPesan.getPelayan() != null){
+                        Administrasi.pesananSelesai(pesan);
+                        return true;
+                    }
+                }
+            }
         }
+        return false;
     }
 }

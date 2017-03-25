@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Kelas DatabaseUser menyimpan data setiap informasi Pelanggan dan Ojek yang dibuat sistem ojeKampus
@@ -8,46 +9,11 @@
 public class DatabaseUser
 {
     // setiap variabel hanya dapat diakses oleh DatabaseUser saja dan hanya dibuat sekali
-    private static Pelanggan pelanggan_database;
-    private static Ojek ojek_database;
+    private static ArrayList<Pelanggan> pelangganDatabase = new ArrayList<Pelanggan>();;
+    private static ArrayList<Ojek> ojekDatabase = new ArrayList<Ojek>();
     private static int id_ojek_terakhir = 1;
     private static int id_pelanggan_terakhir = 1;
 
-    /**
-     * Penambahan pelanggan ke database
-     * 
-     * @param       baru            Pengguna layanan ojeKampus
-     * 
-     * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
-     * 
-     */
-    public static boolean addPelanggan(Pelanggan baru)
-    {
-        /* 
-         * Method melakukan referensi instance Pesanan melalui parameter pesan
-         */
-        pelanggan_database = baru;
-        System.out.println("Penambahan pelanggan berhasil");
-        return true;
-    }
-    
-    /**
-     * Penghapusan pelanggan dari database
-     * 
-     * @param       id              identitas dari pelanggan
-     * 
-     * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
-     * 
-     */
-    public static boolean removePelanggan(int id)
-    {
-        /* 
-         * Method melakukan dereferensi instance Pesanan melalui parameter pesan
-         */
-        pelanggan_database = null;
-        return true;
-    }
-    
     /**
      * Penambahan ojek ke database
      * 
@@ -61,28 +27,39 @@ public class DatabaseUser
         /* 
          * Method melakukan referensi instance Pesanan melalui parameter pesan
          */
-        ojek_database = baru;
-        System.out.println("Penambahan ojek berhasil");
-        return true;
+       if(!ojekDatabase.isEmpty() && ojekDatabase.contains(baru)){
+           return false;
+       } else {
+           ojekDatabase.add(baru);
+           id_ojek_terakhir += 1;
+           System.out.println("Penambahan ojek berhasil");
+           return true;
+       }
     }
     
     /**
-     * Penghapusan ojek ke database
+     * Penambahan pelanggan ke database
      * 
-     * @param       id nomor identitas ojek
+     * @param       baru            Pengguna layanan ojeKampus
      * 
      * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
      * 
      */
-    public static boolean removeOjek(int id)
+    public static boolean addPelanggan(Pelanggan baru)
     {
         /* 
-         * Method melakukan dereferensi instance Pesanan melalui parameter pesan
+         * Method melakukan referensi instance Pesanan melalui parameter pesan
          */
-        ojek_database = null;
-        return true;
+       if(!pelangganDatabase.isEmpty() && pelangganDatabase.contains(baru)){
+           return false;
+       } else {
+           pelangganDatabase.add(baru);
+           id_pelanggan_terakhir += 1;
+           System.out.println("Penambahan pelanggan berhasil");
+           return true;
+       }
     }
-    
+       
     /**
      * Mendapatkan nomor identitas ojek terakhir
      * 
@@ -115,78 +92,95 @@ public class DatabaseUser
         return id_pelanggan_terakhir;
     }
     
+    public static ArrayList<Ojek> getOjekDatabase(){
+        return ojekDatabase;
+    }
+    
+    public static ArrayList<Pelanggan> getPelangganDatabase(){
+        return pelangganDatabase;
+    }
+    
     /**
      * Mendapatkan informasi ojek
      * 
      * @param       none nothing
      * 
-     * @return      ojek_database   ojek
+     * @return      ojekDatabase   ojek
      * 
      */
-    public static Ojek getUserOjek()
+    public static Ojek getUserOjek(int id)
     {
         /* 
-         * Method informasi ojek - ojek yang diwakili oleh ojek_database
+         * Method informasi ojek - ojek yang diwakili oleh ojekDatabase
          */
-        return ojek_database;
+        for(Ojek ojek : ojekDatabase){
+            if(ojek.getID() == id)
+                return ojek;
+        }
+        return null;
     }
-    
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    /*public Pelanggan getOjekDatabase()
-    {
-        // put your code here
-        return "";
-    }*/
     
     /**
      * Mendapatkan informasi pelanggan
      * 
      * @param       none nothing
      * 
-     * @return     pelanggan_database pengguna ojek
+     * @return     pelangganDatabase pengguna ojek
      * 
      */
-    public static Pelanggan getUserPelanggan()
+    public static Pelanggan getUserPelanggan(int id)
     {
         /* 
-         * Method informasi pelanggan - pelanggan yang diwakili oleh pelanggan_database
+         * Method informasi pelanggan - pelanggan yang diwakili oleh pelangganDatabase
          */
-        return pelanggan_database;
+        for(Pelanggan pengguna : pelangganDatabase){
+            if(pengguna.getID() == id)
+                return pengguna;
+        }
+        return null;
     }
     
     /**
-     * Penambahan pesanan baru ke dalam list
+     * Penghapusan pelanggan dari database
      * 
-     * @param       none nothing
+     * @param       id              identitas dari pelanggan
      * 
-     * @return      - -
-     * 
-     */
-    public String getPelangganDatabase()
-    {
-        // put your code here
-        return "";
-    }
-    
-    /**
-     * 
-     * 
-     * @param       
-     * 
-     * @return      
+     * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
      * 
      */
-    public static void printData()
+    public static boolean removePelanggan(int id)
     {
         /* 
-         * Method melakukan dereferensi instance Pesanan melalui parameter 
+         * Method melakukan dereferensi instance Pesanan melalui parameter pesan
          */
-        System.out.println("Ojek dengan nama " + ojek_database.getNama() + " dan ID " + ojek_database.getID() + " memiliki status " + ojek_database.getStatus());
-        System.out.println("Pelanggan dengan nama" + pelanggan_database.getNama() + " dan ID " + pelanggan_database.getID());
+        for(Pelanggan pengguna : pelangganDatabase){
+            if(pengguna.getID() == id){
+                pelangganDatabase.remove(pengguna);
+                return true;
+            }
+        }
+        return false;
+    }
+      
+    /**
+     * Penghapusan ojek ke database
+     * 
+     * @param       id nomor identitas ojek
+     * 
+     * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
+     * 
+     */
+    public static boolean removeOjek(int id)
+    {
+        /* 
+         * Method melakukan dereferensi instance Pesanan melalui parameter pesan
+         */
+        for(Ojek pelayan : ojekDatabase){
+            if(pelayan.getID() == id){
+                ojekDatabase.remove(pelayan);
+                return true;
+            }
+        }
+        return false;
     }
 }

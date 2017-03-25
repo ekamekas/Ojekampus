@@ -231,10 +231,10 @@ public class Pelanggan
         /* 
          * Method ini menampilkan nomor identitas dan nama dari pelanggan
          */
-        if(DatabasePesanan.getPesanan() == null){
+        if(DatabasePesanan.getPesanan(this) == null){
             return "Nama Pelanggan : " + getNama() + '\n' + "ID : " + getID() + '\n' + "No Telefon " + getTelefon() + '\n';
         } else {
-            return "Nama Pelanggan : " + getNama() + '\n' + "ID : " + getID() + '\n' + "No Telefon " + getTelefon() + '\n' + "Pelanggan Awal : " + DatabasePesanan.getPesanan().getPenggunaAwal() + '\n';
+            return "Nama Pelanggan : " + getNama() + '\n' + "ID : " + getID() + '\n' + "No Telefon " + getTelefon() + '\n' + "Pelanggan Awal : " + DatabasePesanan.getPesanan(this).getPenggunaAwal() + '\n';
         }
     }
 }

@@ -54,7 +54,7 @@ public class Pesanan
          */
         // nilai parameter pengguna akan di berikan ke variabel class this.pengguna
         this.pengguna = pengguna;
-        // nilai parameter layanan akan di berikan ke variabel class this.layanan
+        // nilai parameter layanan akan di berikan ke   variabel class this.layanan
         this.layanan = layanan;
         // nilai parameter lokasiAwal akan di berikan ke variabel class this.lokasiAwal
         this.lokasiAwal = lokasiAwal;
@@ -141,68 +141,53 @@ public class Pesanan
         // nilai parameter biaya akan di berikan ke variabel class this.biaya
         this.biaya = biaya;
     }
-
+    
     /**
-     * Getter status dari pesanan
+     * Getter biaya pesanan
      * 
      * @param       none            nothing 
      * 
-     * @return      Boolean         false
+     * @return      biaya           nilai harga dari pesanan ojek
      * 
      */
-    public boolean getStatusPesanan()
+    public double getBiaya()
     {
         /* 
-         * Method ini memberikan informasi mengenai status dari pesanan 
+         * Method ini mengembalikan nilai biaya dari pesanan  
          */
-        return false;
-    }
-
-    /**
-     * Getter status dari pesanan
-     * 
-     * @param       none            nothing 
-     * 
-     * @return      Boolean         false
-     * 
-     */
-    public boolean getStatusDiproses()
-    {
-        /* 
-         * Method ini memberikan informasi mengenai status dari pesanan 
-         */
-        return diproses;
+        return biaya;
     }
     
     /**
-     * Getter status dari pesanan
+     * Getter LokasiAwal dari pesanan
      * 
      * @param       none            nothing 
      * 
-     * @return      Boolean         false
+     * @return      lokasiAwal      Lokasi awal pesanan
      * 
      */
-    public boolean getStatusSelesai()
+    public Lokasi getLokasiAwal()
     {
         /* 
-         * Method ini memberikan informasi mengenai status dari pesanan 
+         * Method ini mengembalikan instance Lokasi dari pesanan sebagai representasi posisi awal pesanan
          */
-        return selesai;
+        return lokasiAwal;
     }
     
     /**
-     * Melakukan reserve dari permintaan pesanan yang dilakukan oleh ojek
+     * Getter LokasiAwal dari pesanan
      * 
-     * @param       pelayan         instance dari class Ojek sebagai representasi pengemudi 
+     * @param       none            nothing 
      * 
-     * @return      none            nothing
+     * @return      lokasiAwal      Lokasi akhir pesanan
      * 
      */
-    public void pesananDiambil(Ojek pelayan)
+    public Lokasi getLokasiAkhir()
     {
         /* 
-         * Melakukan reserve dari permintaan pesanan yang dilakukan oleh ojek 
+         * Method ini mengembalikan instance Lokasi dari pesanan sebagai representasi posisi akhir pesanan
          */
+        return lokasiAkhir;
     }
     
     /**
@@ -238,51 +223,35 @@ public class Pesanan
     }
     
     /**
-     * Pembatalan pesanan
+     * Getter status dari pesanan
      * 
      * @param       none            nothing 
      * 
-     * @return      none            nothing
+     * @return      Boolean         false
      * 
      */
-    public void pesananDibatalkan()
+    public boolean getStatusDiproses()
     {
         /* 
-         * Method ini melakukan pembatalan pesanan
-         * variabel dibatalkan akan dirubah nilainya menjadi true
+         * Method ini memberikan informasi mengenai status dari pesanan 
          */
+        return diproses;
     }
     
     /**
-     * Getter LokasiAwal dari pesanan
+     * Getter status dari pesanan
      * 
      * @param       none            nothing 
      * 
-     * @return      lokasiAwal      Lokasi awal pesanan
+     * @return      Boolean         false
      * 
      */
-    public Lokasi getLokasiAwal()
+    public boolean getStatusSelesai()
     {
         /* 
-         * Method ini mengembalikan instance Lokasi dari pesanan sebagai representasi posisi awal pesanan
+         * Method ini memberikan informasi mengenai status dari pesanan 
          */
-        return lokasiAwal;
-    }
-    
-    /**
-     * Getter LokasiAwal dari pesanan
-     * 
-     * @param       none            nothing 
-     * 
-     * @return      lokasiAwal      Lokasi akhir pesanan
-     * 
-     */
-    public Lokasi getLokasiAkhir()
-    {
-        /* 
-         * Method ini mengembalikan instance Lokasi dari pesanan sebagai representasi posisi akhir pesanan
-         */
-        return lokasiAkhir;
+        return selesai;
     }
     
     /**
@@ -332,22 +301,6 @@ public class Pesanan
          * Method ini mengembalikan string pengguna akhir dari pesanan  
          */
         return pelangganAkhir;
-    }
-    
-    /**
-     * Getter biaya pesanan
-     * 
-     * @param       none            nothing 
-     * 
-     * @return      biaya           nilai harga dari pesanan ojek
-     * 
-     */
-    public double getBiaya()
-    {
-        /* 
-         * Method ini mengembalikan nilai biaya dari pesanan  
-         */
-        return biaya;
     }
     
     /**
@@ -522,23 +475,6 @@ public class Pesanan
          * Method ini menampilkan nama lokasi awal, nama lokasi akhir dan tipe layanan 
          */
         String final_status = "KOSONG";
-        // 
-        /*System.out.println("Nama pelanggan awal : " + pelangganAwal);
-        //
-        System.out.println("Nama pelanggan akhir : " + pelangganAkhir);
-        // method dari instance lokasiAwal akan mengembalikan nama lokasi sebagai input argumen dari method print
-        System.out.println("Lokasi pelanggan awal : " + lokasiAwal.getNama());
-        // method dari instance lokasiAkhir akan mengembalikan nama lokasi sebagai input argumen dari method print
-        System.out.println("Lokasi pelanggan akhir : " + lokasiAkhir.getNama());
-        // variabel layanan akan memberikan nilai tipe layanan yang digunakan
-        System.out.println("Tipe layanan : " + layanan);
-        //
-        if(getStatusSelesai()){
-            System.out.println("[+] Pesanan sudah selesai");
-        } else if(getStatusDiproses()){
-            System.out.println("[+] Pesanan sedang diproses");
-        }
-        return "";*/
         if(getStatusDiproses() == true && getStatusSelesai() == false){
             final_status = "DIPROSES";
         } else if(getStatusDiproses() == false && getStatusSelesai() == false){
