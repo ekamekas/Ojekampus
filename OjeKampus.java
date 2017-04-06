@@ -25,7 +25,6 @@ public class OjeKampus
          * Dalam program ini data dalam database akan ditambahkan objek - objek yang bersangkutan
          * Terdapat perubahan data yang dilakukan oleh objek
          */
-        System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+");
         registrasiOjek();
         registrasiPengguna();
         beliBarang(DatabaseUser.getPelangganDatabase().get(0));

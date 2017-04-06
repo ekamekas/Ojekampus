@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=name\ power
+comment0.target=Tank(java.lang.String,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Damager\r\n
+comment1.params=name
+comment1.target=void\ setAttackName(java.lang.String)
+comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment2.params=power
+comment2.target=void\ setAttackPower(int)
+comment3.params=
+comment3.target=java.lang.String\ getAttackName()
+comment4.params=
+comment4.target=int\ getAttackPower()
+comment5.params=
+comment5.target=double\ getRank()
+numComments=6
