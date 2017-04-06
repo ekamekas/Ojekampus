@@ -1,7 +1,6 @@
 #BlueJ class context
 comment0.params=name\ dmg
 comment0.target=void\ setWeapon(java.lang.String,\ double)
-comment0.text=\r\n\ An\ example\ of\ a\ method\ header\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ \ \ \ the\ result\ produced\ by\ sampleMethod\ \r\n
 comment1.params=name\ def
 comment1.target=void\ setArmor(java.lang.String,\ double)
 comment2.params=

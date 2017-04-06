@@ -1,10 +1,10 @@
 import java.util.Random;
 
 /**
- * Write a description of class Play here.
+ * Class yang digunakan untuk menjalankan permainan
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Mas Eka Setiawan 
+ * @version 2017.4.7
  */
 public class Play
 {
@@ -21,14 +21,12 @@ public class Play
     {
          initialize();
 
-         System.out.println("War start!" +
-         "\nHero = " + player.getName() + ", level = " + player.getLevel() +
-         "\nEnemy = " + enemy.getName() + ", level = " + player.getLevel());
+         System.out.println("War start!");
         
          for (int i = 1; !player.isDead(); i++)
          {
              print(i);
-            
+             System.out.println("\nHero = " + player.getName() + ", level = " + player.getLevel() + "\nEnemy = " + enemy.getName() + ", level = " + player.getLevel());
              if (enemy.isDead())
              {
                  System.out.println("Enemy died! Spawning new enemy!");
@@ -43,31 +41,39 @@ public class Play
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Insialisasi objek player permainan
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
      */
     private void initialize()
     {
         rand = new Random();
         player = new Hero("Electron", 1);
-        player.setRank(setRank("Small Mass", 100));
-        player.setWeapon("Negative Charge", 50.0);
-        player.setArmor("Negative Cloak", 120.0);
+        player.setRank(setRank("Small Mass", 30));
+        player.setWeapon("Negative Charge", 20.0);
+        player.setArmor("Negative Cloak", 25.0);
         enemyCount = 1;
         initializeEnemy();
     }
     
+    /**
+     * Insialisasi objek musuh permainan
+     * 
+     */
     private void initializeEnemy(){
             enemy = new Monster("Poring", enemyCount);
             enemy.setRank(setRank("Small Mass", rand.nextInt(100 - 50) + 50));
             enemy.setWeapon("Knive", rand.nextInt(25 - 5) + 5);
             enemy.setArmor("Hat", rand.nextInt(25 - 5) + 5);
     }
-    
+
+    /**
+     * Display permainan dan mekanisme pergantian
+     * 
+     * @param i nilai ronde
+     */
     private void print(int i){
         Entity attacker, defender;
+        System.out.println("\nRound = " + i + "\nKill count = " + (enemyCount - 1) + "\nHero health = " + player.getHP() + ", Enemy health = " + enemy.getHP());
         if(i % 2 != 0){
             attacker = player;
             defender = enemy;
@@ -79,6 +85,15 @@ public class Play
         attackTurn(attacker, defender);
     }
     
+    /**
+     * Method untuk set Rank dari objek karakter permainan
+     * 
+     * @param name Nama serangan
+     * @param power kekuatan serangan
+     * 
+     * @return Rank
+     * 
+     */
     private Rank setRank(String name, int power){
         int levelRank = player.getLevel() % 3;
         Rank rank;
@@ -92,13 +107,20 @@ public class Play
         return rank;
     }
     
+    /**
+     * Method untuk mekanisme serangan
+     * 
+     * @param attacker Entitas penyerang
+     * @param defender Entitas bertahan
+     * 
+     */
     private void attackTurn(Entity attacker, Entity defender){
         int damage = attacker.getDamage(defender.getDefense(), defender.getRank().getRank());
         defender.setHP((double)damage);
-        System.out.println("Serangan" + damage);
+        System.out.println("Serangan : " + damage);
     }
     
-    public void main(String[] args){
+    public static void main(String[] args){
         Play main = new Play();
     }
 }

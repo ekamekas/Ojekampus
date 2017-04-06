@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Damager here.
+ * Class yang implementasikan Rank
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Mas Eka Setiawan 
+ * @version 2017.4.6
  */
 public class Damager implements Rank
 {
@@ -18,34 +18,57 @@ public class Damager implements Rank
     public Damager(String name, int power)
     {
         // initialise instance variables
+        attackName = name;
+        attackPower = power;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method setter kekuatan
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  name   Nama Serangan 
      */
     public void setAttackName(String name){
         // put your code here
+        attackName = name;
     }
     
+    /**
+     * Method setter kekuatan
+     * 
+     * @param  power   Kekuatan 
+     */
     public void setAttackPower(int power){
         // put your code here
+        attackPower = power;
     }
     
+    /**
+     * Method getter nama Serangan
+     * 
+     * @return  Nama Serangan 
+     */
     public String getAttackName(){
         // put your code here
-        return "";
+        return attackName;
     }
     
+    /**
+     * Method getter kekuatan
+     * 
+     * @return  Kekuatan 
+     */
     public int getAttackPower(){
         // put your code here
-        return 0;
+        return attackPower;
     }
     
+    /**
+     * Method getter nilai rank
+     * 
+     * @return  Nilai rank 
+     */
     public double getRank(){
         // put your code here
-        return 0.0;
+        return rank;
     }
 }
