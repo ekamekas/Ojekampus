@@ -1,3 +1,4 @@
+package MasEkaSetiawan_6;
 
 /**
  * Abstract class Entity - Perilaku dari sebuah karakter

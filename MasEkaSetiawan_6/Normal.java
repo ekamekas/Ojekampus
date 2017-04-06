@@ -1,21 +1,21 @@
-
+package MasEkaSetiawan_6;
 /**
  * Class yang implementasikan Rank
  * 
  * @author Mas Eka Setiawan 
  * @version 2017.4.7
  */
-public class Tank implements Rank
+public class Normal implements Rank
 {
     // instance variables - replace the example below with your own
     private String attackName;
     private int attackPower;
-    private static double rank = 0.8;
+    private static double rank = 1;
 
     /**
      * Constructor for objects of class Damager
      */
-    public Tank(String name, int power)
+    public Normal(String name, int power)
     {
         // initialise instance variables
         attackName = name;

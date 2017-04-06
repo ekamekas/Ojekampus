@@ -1,4 +1,4 @@
-
+package MasEkaSetiawan_6;
 /**
  * Class karakter player
  * 

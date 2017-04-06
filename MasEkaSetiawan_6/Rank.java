@@ -1,4 +1,4 @@
-
+package MasEkaSetiawan_6;
 /**
  * Write a description of interface Rank here.
  * 

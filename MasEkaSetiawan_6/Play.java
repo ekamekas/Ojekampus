@@ -1,3 +1,5 @@
+package MasEkaSetiawan_6;
+
 import java.util.Random;
 
 /**

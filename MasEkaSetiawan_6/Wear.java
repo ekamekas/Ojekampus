@@ -1,4 +1,4 @@
-
+package MasEkaSetiawan_6;
 /**
  * Interface peralatan untuk Entitas karakter
  * 
