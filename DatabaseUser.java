@@ -9,8 +9,7 @@ import java.util.ArrayList;
 public class DatabaseUser
 {
     // setiap variabel hanya dapat diakses oleh DatabaseUser saja dan hanya dibuat sekali
-    private static ArrayList<Pelanggan> pelangganDatabase = new ArrayList<Pelanggan>();;
-    private static ArrayList<Ojek> ojekDatabase = new ArrayList<Ojek>();
+    private static ArrayList<User> userDatabase = new ArrayList<User>();
     private static int id_ojek_terakhir = 1;
     private static int id_pelanggan_terakhir = 1;
 
@@ -27,10 +26,12 @@ public class DatabaseUser
         /* 
          * Method melakukan referensi instance Pesanan melalui parameter pesan
          */
-       if(!ojekDatabase.isEmpty() && ojekDatabase.contains(baru)){
+       Ojek pelayan = new Ojek(baru.getID(), null, null);
+       if(!userDatabase.isEmpty() && getOjekDatabase().contains(pelayan)){
+           System.out.println("Penambahan ojek gagal");
            return false;
        } else {
-           ojekDatabase.add(baru);
+           userDatabase.add(baru);
            id_ojek_terakhir += 1;
            System.out.println("Penambahan ojek berhasil");
            return true;
@@ -50,10 +51,12 @@ public class DatabaseUser
         /* 
          * Method melakukan referensi instance Pesanan melalui parameter pesan
          */
-       if(!pelangganDatabase.isEmpty() && pelangganDatabase.contains(baru)){
+       Pelanggan pelanggan = new Pelanggan(baru.getID(), null, null);
+       if(!userDatabase.isEmpty() && getPelangganDatabase().contains(pelanggan)){
+           System.out.println("Penambahan pelanggan gagal");
            return false;
        } else {
-           pelangganDatabase.add(baru);
+           userDatabase.add(baru);
            id_pelanggan_terakhir += 1;
            System.out.println("Penambahan pelanggan berhasil");
            return true;
@@ -93,10 +96,20 @@ public class DatabaseUser
     }
     
     public static ArrayList<Ojek> getOjekDatabase(){
+        ArrayList<Ojek> ojekDatabase = new ArrayList<Ojek>();
+        for(User u : userDatabase){
+            if(u instanceof Ojek)
+                ojekDatabase.add((Ojek)u);
+        }
         return ojekDatabase;
     }
     
     public static ArrayList<Pelanggan> getPelangganDatabase(){
+        ArrayList<Pelanggan> pelangganDatabase = new ArrayList<Pelanggan>();
+        for(User u : userDatabase){
+            if(u instanceof Pelanggan)
+                pelangganDatabase.add((Pelanggan)u);
+        }
         return pelangganDatabase;
     }
     
@@ -113,7 +126,7 @@ public class DatabaseUser
         /* 
          * Method informasi ojek - ojek yang diwakili oleh ojekDatabase
          */
-        for(Ojek ojek : ojekDatabase){
+        for(Ojek ojek : getOjekDatabase()){
             if(ojek.getID() == id)
                 return ojek;
         }
@@ -133,7 +146,7 @@ public class DatabaseUser
         /* 
          * Method informasi pelanggan - pelanggan yang diwakili oleh pelangganDatabase
          */
-        for(Pelanggan pengguna : pelangganDatabase){
+        for(Pelanggan pengguna : getPelangganDatabase()){
             if(pengguna.getID() == id)
                 return pengguna;
         }
@@ -153,9 +166,9 @@ public class DatabaseUser
         /* 
          * Method melakukan dereferensi instance Pesanan melalui parameter pesan
          */
-        for(Pelanggan pengguna : pelangganDatabase){
+        for(Pelanggan pengguna : getPelangganDatabase()){
             if(pengguna.getID() == id){
-                pelangganDatabase.remove(pengguna);
+                userDatabase.remove(pengguna);
                 return true;
             }
         }
@@ -175,9 +188,9 @@ public class DatabaseUser
         /* 
          * Method melakukan dereferensi instance Pesanan melalui parameter pesan
          */
-        for(Ojek pelayan : ojekDatabase){
+        for(Ojek pelayan : getOjekDatabase()){
             if(pelayan.getID() == id){
-                ojekDatabase.remove(pelayan);
+                userDatabase.remove(pelayan);
                 return true;
             }
         }

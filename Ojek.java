@@ -11,7 +11,7 @@ import java.util.Date;
  * @author Mas Eka Setiawan 
  * @version 2017.3.3
  */
-public class Ojek
+public class Ojek extends User
 {
     // setiap variabel hanya dapat diakses oleh Ojek saja
     // status menentukan apakah ojek sudah di-book atau tidak
@@ -20,11 +20,8 @@ public class Ojek
     private Lokasi posisiSekarang;
     // pesanan_sekarang menyimpan informasi pesanan yang sedang diambil oleh ojek
     private Pesanan pesanan_sekarang = null;
-    // id merupakan nomor identitas ojek
-    private int id;
-    // nama merupakan nama dari pengemudi ojek
-    private String nama, telefon, email, noPlat;
-    private Date dob;
+    
+    private String noPlat;
 
     /**
      * Kontruktor kelas ojek
@@ -36,7 +33,7 @@ public class Ojek
      * @return      none            nothing
      * 
      */
-    public Ojek(int id, String nama, Lokasi posisiSekarang, Date dob, String noPlat)
+    public Ojek(int id, String nama, Lokasi posisiSekarang)
     {
         /* Konstruktor Ojek akan berperan sebagai inisiasi variabel dan instance Lokasi ketika Objek Ojek dibuat
          * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
@@ -44,87 +41,11 @@ public class Ojek
          * Setiap parameter akan memberikan nilai ke field class akesor private
          */ 
         // this.id merupaakan nomor identitas yang merepresentasikan ojek
-        this.id = id;
+        super.id = id;
         // this.nama merupakan nama dari ojek
-        this.nama = nama;
+        super.nama = nama;
         // this.posisiSekarang merupaakan instance variabel dari kelas Lokasi yang merepresentasikan posisi ojek saat ini
         this.posisiSekarang = posisiSekarang;
-        //
-        this.dob = dob;
-        //
-        setNoPlat(noPlat);
-    }
-    
-    /**
-     * Getter identitas pengemudi ojek
-     * 
-     * @param       none            nothing
-     * @return      id              mengembalikan nilai nomor identitas
-     */
-    public int getID()
-    {
-        // Method ini akan mengembalikan nilai variabel class id
-        return id;
-    }
-    
-    /**
-     * Getter nama pengemudi ojek
-     * 
-     * @param       none             nothing
-     * @return      nama             mengembalikan nama pengemudi ojek 
-     */
-    public String getNama()
-    {
-        // Method ini akan mengembalikan nilai variabel class nama berupa String 
-        return nama;
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public String getTelefon()
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        return noPlat;
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public String getEmail()
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        return email;
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public Date getDOB()
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        return dob;
     }
     
     /**
@@ -177,98 +98,6 @@ public class Ojek
     {
         // Method ini akan mengembalikan nilai variabel class status 
         return status;
-    }
-    
-    /**
-     * Setter identitas pengemudi ojek
-     * 
-     * @param       id              nilai id yang akan diset
-     * @return      none            nothing 
-     */
-    public void setID(int id)
-    {
-        // Method ini akan mem-passing parameter id ke variabel id
-        // this.id merupakan penamaan alternatif dari variabel class id
-        this.id = id;
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public void setNama(String nama)
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        this.nama = nama;
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public boolean setTelefon(String telefon)
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        Pattern pattern = Pattern.compile("[0-9]{11,13}");
-        Matcher matcher = pattern.matcher(telefon);
-        if(!matcher.matches()){
-            return false;
-        } else{
-            this.telefon = telefon;
-            return true;
-        }
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public boolean setEmail(String email)
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        Pattern pattern = Pattern.compile(".+[@]{1}+.+[.]{1}+.+");
-        Matcher matcher = pattern.matcher(email);
-        if(matcher.matches()){
-            this.email = email;
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    
-    /**
-     * Setter nama pengemudi ojek
-     * 
-     * @param       nama            nama pengemudi yang akan diset
-     * @return      none            nothing 
-     */
-    public void setDOB(Date dob)
-    {
-        /* 
-         * Method ini akan mem-passing parameter nama ke variabel nama
-         * Nilai dari variabel class nama akan dirubah oleh nilai apapun yang di pass lewat parameter
-         */
-        // this.nama merupakan penamaan alternatif dari variabel class nama 
-        this.dob = dob;
     }
     
     /**

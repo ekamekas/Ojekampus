@@ -94,14 +94,14 @@ public class OjeKampus
     }
     
     public static void registrasiOjek(){
-        DatabaseUser.addOjek(new Ojek(DatabaseUser.getIDOjekTerakhir(), "Mas Eka", new Lokasi("Komplek Pemda", 14, 06, "Cipocok Jaya, Kota Serang"), (new GregorianCalendar(1997, 05, 12).getTime()), "A1234A"));
-        DatabaseUser.addOjek(new Ojek(DatabaseUser.getIDOjekTerakhir(), "Fajri", new Lokasi("Kost Andalas", 14, 06, "Kutek, Depok"), (new GregorianCalendar(1997, 05, 12).getTime()), "B123UA"));
-        DatabaseUser.addOjek(new Ojek(DatabaseUser.getIDOjekTerakhir(), "Faris Abdurrahman", new Lokasi("Bogor", 14, 06, "Kota Hujan"), (new GregorianCalendar(1997, 05, 12).getTime()), "B647AA"));
+        DatabaseUser.addOjek(new Ojek(DatabaseUser.getIDOjekTerakhir(), "Mas Eka", new Lokasi("Komplek Pemda", 14, 06, "Cipocok Jaya, Kota Serang")));
+        DatabaseUser.addOjek(new Ojek(DatabaseUser.getIDOjekTerakhir(), "Fajri", new Lokasi("Kost Andalas", 14, 06, "Kutek, Depok")));
+        DatabaseUser.addOjek(new Ojek(DatabaseUser.getIDOjekTerakhir(), "Faris Abdurrahman", new Lokasi("Bogor", 14, 06, "Kota Hujan")));
     }
     
     public static void registrasiPengguna(){
-        DatabaseUser.addPelanggan(new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Setiawan", (new GregorianCalendar(1927, 11, 28).getTime()), "081203040501"));
-        DatabaseUser.addPelanggan(new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Rahmadi", (new GregorianCalendar(2007, 05, 13).getTime()), "0812847428484"));
-        DatabaseUser.addPelanggan(new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Pabe", (new GregorianCalendar(1978, 02, 14).getTime()), "0823239389838"));
+        DatabaseUser.addPelanggan(new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Setiawan", "081203040501"));
+        DatabaseUser.addPelanggan(new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Rahmadi", "0812847428484"));
+        DatabaseUser.addPelanggan(new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Pabe", "0823239389838"));
     }
 }
