@@ -28,12 +28,12 @@ public class DatabaseUser
          */
        Ojek pelayan = new Ojek(baru.getID(), null, null);
        if(!userDatabase.isEmpty() && getOjekDatabase().contains(pelayan)){
-           System.out.println("Penambahan ojek gagal");
+           System.out.println("[!] SYSTEM : Penambahan ojek gagal");
            return false;
        } else {
            userDatabase.add(baru);
            id_ojek_terakhir += 1;
-           System.out.println("Penambahan ojek berhasil");
+           System.out.println("[!] SYSTEM : Penambahan ojek berhasil");
            return true;
        }
     }
@@ -53,12 +53,12 @@ public class DatabaseUser
          */
        Pelanggan pelanggan = new Pelanggan(baru.getID(), null, null);
        if(!userDatabase.isEmpty() && getPelangganDatabase().contains(pelanggan)){
-           System.out.println("Penambahan pelanggan gagal");
+           System.out.println("[!] SYSTEM : Penambahan pelanggan gagal");
            return false;
        } else {
            userDatabase.add(baru);
            id_pelanggan_terakhir += 1;
-           System.out.println("Penambahan pelanggan berhasil");
+           System.out.println("[!] SYSTEM : Penambahan pelanggan berhasil");
            return true;
        }
     }

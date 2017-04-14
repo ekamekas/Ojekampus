@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=pelangganInput
-comment0.target=PesananOlehPelangganDitemukanException(Pelanggan)
+comment0.target=PesananOlehPelangganTidakDitemukanException(Pelanggan)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PesananOlehPelangganDitemukanException\r\n
 comment1.params=
 comment1.target=java.lang.String\ getMessage()

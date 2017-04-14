@@ -5,7 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PesananOlehPelangganDitemukanException extends Exception
+public class PesananOlehPelangganTidakDitemukanException extends Exception
 {
     // instance variables - replace the example below with your own
     private Pelanggan pelangganError;
@@ -13,7 +13,7 @@ public class PesananOlehPelangganDitemukanException extends Exception
     /**
      * Constructor for objects of class PesananOlehPelangganDitemukanException
      */
-    public PesananOlehPelangganDitemukanException(Pelanggan pelangganInput)
+    public PesananOlehPelangganTidakDitemukanException(Pelanggan pelangganInput)
     {
         // initialise instance variables
         super("Pesanan oleh ");

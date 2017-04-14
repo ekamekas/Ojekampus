@@ -20,7 +20,7 @@ public class DatabasePesanan
      * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
      * 
      */
-    public static boolean addPesanan(Pesanan pesan)
+    public static boolean addPesanan(Pesanan pesan) throws PesananSudahAdaException
     {
         /* 
          * Method melakukan referensi instance Pesanan melalui parameter pesan
@@ -28,7 +28,8 @@ public class DatabasePesanan
         if(listPesanan != null){
             for(Pesanan listPesan : listPesanan){
                 if(listPesan.getPelanggan() == pesan.getPelanggan()){
-                    return false;
+                    throw new PesananSudahAdaException(pesan);
+                    //return false;
                 }
             }
         }
@@ -80,7 +81,7 @@ public class DatabasePesanan
      * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
      * 
      */
-    public static boolean hapusPesanan(Pelanggan pengguna)
+    public static boolean hapusPesanan(Pelanggan pengguna) throws PesananOlehPelangganTidakDitemukanException
     {
         /* 
          * Method melakukan dereferensi instance Pesanan melalui parameter 
@@ -95,7 +96,8 @@ public class DatabasePesanan
                 }
             }
         }
-        return false;
+        throw new PesananOlehPelangganTidakDitemukanException(pengguna);
+        //return false;
     }
     
     /**
@@ -106,7 +108,7 @@ public class DatabasePesanan
      * @return      boolean         merepresentasikan keberhasilan / tidaknya proses penambahan pesanan
      * 
      */
-    public static boolean hapusPesanan(Pesanan pesan)
+    public static boolean hapusPesanan(Pesanan pesan) throws PesananTidakDitemukanException
     {
         /* 
          * Method melakukan dereferensi instance Pesanan melalui parameter 
@@ -121,6 +123,7 @@ public class DatabasePesanan
                 }
             }
         }
-        return false;
+        throw new PesananTidakDitemukanException(pesan);
+        //return false;
     }
 }

@@ -27,46 +27,59 @@ public class OjeKampus
          */
         registrasiOjek();
         registrasiPengguna();
-        beliBarang(DatabaseUser.getPelangganDatabase().get(0));
-        antarBarang(DatabaseUser.getPelangganDatabase().get(1));
+//         beliBarang(DatabaseUser.getPelangganDatabase().get(0));
+//         antarBarang(DatabaseUser.getPelangganDatabase().get(1));
+        antarOrang(DatabaseUser.getPelangganDatabase().get(2));
         antarOrang(DatabaseUser.getPelangganDatabase().get(2));
         Administrasi.jalankanSistemPenugas();
-        Administrasi.jalankanSistemPenugas();
-        Administrasi.jalankanSistemPenugas();
-        System.out.println("Pengguna Membatalkan :");
-        Administrasi.printAllDatabase();
-        
-        penggunaMembatalkan(DatabaseUser.getPelangganDatabase().get(0));
-        System.out.println("Ojek Membatalkan :");
-        Administrasi.printAllDatabase();
-        
-        ojekMembatalkan(DatabasePesanan.getPesanan(DatabaseUser.getPelangganDatabase().get(1)).getPelayan());
-        System.out.println("Pengguna Membatalkan :");
-        Administrasi.printAllDatabase();
-        
-        ojekMengubahStatus(DatabasePesanan.getPesanan(DatabaseUser.getPelangganDatabase().get(2)).getPelayan());
-        System.out.println("Ojek Ubah Status :");
-        Administrasi.printAllDatabase();
-        
-        penggunaMenyelesaikanPesanan(DatabaseUser.getPelangganDatabase().get(2));
-        System.out.println("Pengguna Pesanan Selesai :");
-        Administrasi.printAllDatabase();
+//         Administrasi.jalankanSistemPenugas();
+//         Administrasi.jalankanSistemPenugas();
+//         System.out.println("Pengguna Membatalkan :");
+//         Administrasi.printAllDatabase();
+//         
+//         penggunaMembatalkan(DatabaseUser.getPelangganDatabase().get(0));
+//         System.out.println("Ojek Membatalkan :");
+//         Administrasi.printAllDatabase();
+//         
+//         ojekMembatalkan(DatabasePesanan.getPesanan(DatabaseUser.getPelangganDatabase().get(1)).getPelayan());
+//         System.out.println("Pengguna Membatalkan :");
+//         Administrasi.printAllDatabase();
+//         
+//         ojekMengubahStatus(DatabasePesanan.getPesanan(DatabaseUser.getPelangganDatabase().get(2)).getPelayan());
+//         System.out.println("Ojek Ubah Status :");
+//         Administrasi.printAllDatabase();
+//         
+//         penggunaMenyelesaikanPesanan(DatabaseUser.getPelangganDatabase().get(2));
+//         System.out.println("Pengguna Pesanan Selesai :");
+//         Administrasi.printAllDatabase();
         
         penggunaMenghapusPesanan(DatabaseUser.getPelangganDatabase().get(2));
-        System.out.println("Pengguna Pesanan Selesai :");
-        Administrasi.printAllDatabase();
+        penggunaMenghapusPesanan(DatabaseUser.getPelangganDatabase().get(2));
+//         System.out.println("Pengguna Pesanan Selesai :");
+//         Administrasi.printAllDatabase();
     }
     
     public static void antarBarang(Pelanggan pengguna){
-        DatabasePesanan.addPesanan(new Pesanan(pengguna, TipeLayanan.ANTAR_BARANG, new Lokasi("Kampus UI", 33, 20, "Depok"), new Lokasi("Asrama Mahasiswa UI", 32, 11, "Lingkungan Kampus UI"), pengguna.getNama(), "Faris Abdurrahman Pabe"));
+        try {
+            DatabasePesanan.addPesanan(new Pesanan(pengguna, TipeLayanan.ANTAR_BARANG, new Lokasi("Kampus UI", 33, 20, "Depok"), new Lokasi("Asrama Mahasiswa UI", 32, 11, "Lingkungan Kampus UI"), pengguna.getNama(), "Faris Abdurrahman Pabe"));
+        } catch(PesananSudahAdaException e) {
+            System.out.println(e.getMessage());
+        }
     }
     
     public static void antarOrang(Pelanggan pengguna){
-        DatabasePesanan.addPesanan(new Pesanan(pengguna, TipeLayanan.ANTAR_ORANG, new Lokasi("Asrama Mahasiswa UI", 32, 11, "Lingkungan Kampus UI"), new Lokasi("Kampus UI", 33, 20, "Depok"), pengguna.getNama()));
+        try {
+            DatabasePesanan.addPesanan(new Pesanan(pengguna, TipeLayanan.ANTAR_ORANG, new Lokasi("Asrama Mahasiswa UI", 32, 11, "Lingkungan Kampus UI"), new Lokasi("Kampus UI", 33, 20, "Depok"), pengguna.getNama()));
+        } catch(PesananSudahAdaException e) {
+            System.out.println(e.getMessage());
+        }
     }
     
     public static void beliBarang(Pelanggan pengguna){
-        DatabasePesanan.addPesanan(new Pesanan(pengguna, TipeLayanan.BELI_BARANG, new Lokasi("Go Satellite Showroom", 101, 202, "Satellite Coverage, Broadband Speed"), new Lokasi("Asrama Mahasiswa UI", 32, 11, "Lingkungan Kampus UI"), pengguna.getNama()));
+        try { DatabasePesanan.addPesanan(new Pesanan(pengguna, TipeLayanan.BELI_BARANG, new Lokasi("Go Satellite Showroom", 101, 202, "Satellite Coverage, Broadband Speed"), new Lokasi("Asrama Mahasiswa UI", 32, 11, "Lingkungan Kampus UI"), pengguna.getNama()));
+        } catch(PesananSudahAdaException e) {
+            System.out.println(e.getMessage());
+        }
     }
     
     public static void ojekMembatalkan(Ojek pelayan){
@@ -86,7 +99,11 @@ public class OjeKampus
     }
     
     public static void penggunaMenghapusPesanan(Pelanggan pengguna){
-        DatabasePesanan.hapusPesanan(pengguna);
+        try {
+            DatabasePesanan.hapusPesanan(pengguna);
+        } catch(PesananOlehPelangganTidakDitemukanException e) {
+            System.out.println(e.getMessage());
+        }
     }
             
     public static void penggunaMenyelesaikanPesanan(Pelanggan pengguna){
