@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=LombaHitung()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ LombaHitung\r\n
+comment1.params=nama
+comment1.target=LombaHitung(java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ LombaHitung\r\n
+comment2.params=
+comment2.target=void\ run()
+comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment3.params=
+comment3.target=void\ start()
+comment4.params=nama
+comment4.target=void\ setNama(java.lang.String)
+comment5.params=delay
+comment5.target=void\ setDelay(int)
+comment6.params=
+comment6.target=java.lang.String\ getNama()
+comment7.params=
+comment7.target=int\ getDelay()
+comment8.params=pesan
+comment8.target=void\ printPesan(java.lang.String)
+numComments=9
