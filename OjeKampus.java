@@ -12,6 +12,7 @@ import java.util.GregorianCalendar;
  */
 public class OjeKampus
 {
+    public static SistemPengawas sistem;
     /**
      * Fungsi utama dari program ojeKampus
      * 
@@ -25,17 +26,17 @@ public class OjeKampus
          * Dalam program ini data dalam database akan ditambahkan objek - objek yang bersangkutan
          * Terdapat perubahan data yang dilakukan oleh objek
          */
+        startSistemPengawas(100);
         registrasiOjek();
         registrasiPengguna();
-//         beliBarang(DatabaseUser.getPelangganDatabase().get(0));
-//         antarBarang(DatabaseUser.getPelangganDatabase().get(1));
+        beliBarang(DatabaseUser.getPelangganDatabase().get(0));
+        antarBarang(DatabaseUser.getPelangganDatabase().get(1));
         antarOrang(DatabaseUser.getPelangganDatabase().get(2));
-        antarOrang(DatabaseUser.getPelangganDatabase().get(2));
-        Administrasi.jalankanSistemPenugas();
-//         Administrasi.jalankanSistemPenugas();
-//         Administrasi.jalankanSistemPenugas();
+        menungguSistem(100);
+        menungguSistem(100);
+        menungguSistem(100);
 //         System.out.println("Pengguna Membatalkan :");
-//         Administrasi.printAllDatabase();
+        Administrasi.printAllDatabase();
 //         
 //         penggunaMembatalkan(DatabaseUser.getPelangganDatabase().get(0));
 //         System.out.println("Ojek Membatalkan :");
@@ -52,11 +53,10 @@ public class OjeKampus
 //         penggunaMenyelesaikanPesanan(DatabaseUser.getPelangganDatabase().get(2));
 //         System.out.println("Pengguna Pesanan Selesai :");
 //         Administrasi.printAllDatabase();
-        
-        penggunaMenghapusPesanan(DatabaseUser.getPelangganDatabase().get(2));
-        penggunaMenghapusPesanan(DatabaseUser.getPelangganDatabase().get(2));
+
 //         System.out.println("Pengguna Pesanan Selesai :");
 //         Administrasi.printAllDatabase();
+        sistem.exit();
     }
     
     public static void antarBarang(Pelanggan pengguna){
@@ -120,5 +120,18 @@ public class OjeKampus
         DatabaseUser.addPelanggan(new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Setiawan", "081203040501"));
         DatabaseUser.addPelanggan(new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Rahmadi", "0812847428484"));
         DatabaseUser.addPelanggan(new Pelanggan(DatabaseUser.getIDPelangganTerakhir(), "Pabe", "0823239389838"));
+    }
+    
+    public static void startSistemPengawas(int waktuCek){
+        sistem = new SistemPengawas("Admin", waktuCek);
+        sistem.start();
+    }
+    
+    public static void menungguSistem(int waktuTunggu){
+        try {
+            Thread.sleep(waktuTunggu);
+        } catch(InterruptedException e){
+            System.out.println("");
+        }
     }
 }
