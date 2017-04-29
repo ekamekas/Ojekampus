@@ -1,4 +1,16 @@
 #BlueJ class context
 comment0.params=
 comment0.target=RegisterCustomerGUI()
-numComments=1
+comment1.params=e
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.params=panel
+comment2.target=void\ createGroupPanel(javax.swing.JPanel)
+comment3.params=pane\ component
+comment3.target=void\ addComponentToPane(javax.swing.JPanel,\ javax.swing.JComponent)
+comment4.params=textComponent
+comment4.target=void\ selectOnFocus(javax.swing.JTextField)
+comment5.params=e
+comment5.target=void\ focusGained(java.awt.event.FocusEvent)
+comment6.params=container\ status
+comment6.target=void\ setVisible(java.awt.Container,\ java.lang.Boolean)
+numComments=7

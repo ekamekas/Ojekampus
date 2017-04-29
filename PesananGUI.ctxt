@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PesananGUI()
+comment1.params=e
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=panel
+comment3.target=void\ createGroupPanel(javax.swing.JPanel)
+comment4.params=pane\ component
+comment4.target=void\ addComponentToPane(javax.swing.JPanel,\ javax.swing.JComponent)
+comment5.params=textComponent
+comment5.target=void\ selectOnFocus(javax.swing.JTextField)
+comment6.params=e
+comment6.target=void\ focusGained(java.awt.event.FocusEvent)
+comment7.params=container\ status
+comment7.target=void\ setVisible(java.awt.Container,\ java.lang.Boolean)
+numComments=8

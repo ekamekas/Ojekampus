@@ -463,6 +463,18 @@ public class Pesanan
         this.selesai = selesai;
     }
     
+    public String getFinalStatus(){
+        String final_status = "KOSONG";
+        if(getStatusDiproses() == true && getStatusSelesai() == false){
+            final_status = "DIPROSES";
+        } else if(getStatusDiproses() == false && getStatusSelesai() == false){
+            final_status = "KOSONG";
+        } else if(getStatusDiproses() == false && getStatusSelesai() == true){
+            final_status = "SELESAI";
+        }
+        return final_status;
+    }
+    
     /**
      * Method ini menampilkan nama lokasi awal, nama lokasi akhir dan tipe layanan
      * 
@@ -474,26 +486,18 @@ public class Pesanan
         /*
          * Method ini menampilkan nama lokasi awal, nama lokasi akhir dan tipe layanan 
          */
-        String final_status = "KOSONG";
-        if(getStatusDiproses() == true && getStatusSelesai() == false){
-            final_status = "DIPROSES";
-        } else if(getStatusDiproses() == false && getStatusSelesai() == false){
-            final_status = "KOSONG";
-        } else if(getStatusDiproses() == false && getStatusSelesai() == true){
-            final_status = "SELESAI";
-        }
         
         if(pelayan == null){
             if(!getPenggunaAkhir().isEmpty()){
-                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getPenggunaAkhir() + " di " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + final_status + "||\n";
+                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getPenggunaAkhir() + " di " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + getFinalStatus() + "||\n";
             } else {
-                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + final_status + "||\n";
+                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + getFinalStatus() + "||\n";
             }
         } else {
             if(!getPenggunaAkhir().isEmpty()){
-                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getPenggunaAkhir() + " di " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + final_status + "||\n" + "Diproses oleh " + getPelayan().getNama() + '\n';
+                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getPenggunaAkhir() + " di " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + getFinalStatus() + "||\n" + "Diproses oleh " + getPelayan().getNama() + '\n';
             } else {
-                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + final_status + "||\n" + "Diproses oleh " + getPelayan().getNama() + '\n';
+                return "Dibuat oleh " + pengguna.getNama() + '\n' + "untuk " + getPenggunaAwal() + " di " + getLokasiAwal().getNama() + " ke " + getLokasiAkhir().getNama() + " dengan layanan " + getTipeLayanan() + " status " + getFinalStatus() + "||\n" + "Diproses oleh " + getPelayan().getNama() + '\n';
             }
         }
     }

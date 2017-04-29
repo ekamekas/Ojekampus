@@ -48,6 +48,28 @@ public class Ojek extends User
         this.posisiSekarang = posisiSekarang;
     }
     
+    public Ojek(int id, String nama, String telefon, String email, Date date, String noPlat, Lokasi posisiSekarang)
+    {
+        /* Konstruktor Ojek akan berperan sebagai inisiasi variabel dan instance Lokasi ketika Objek Ojek dibuat
+         * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
+         * Setiap parameter harus diisi dengan nilai paling tidak null atau 0
+         * Setiap parameter akan memberikan nilai ke field class akesor private
+         */ 
+        // this.id merupaakan nomor identitas yang merepresentasikan ojek
+        super.id = id;
+        // this.nama merupakan nama dari ojek
+        super.nama = nama;
+        //
+        super.telefon = telefon;
+        super.email = email;
+        super.dob = date;
+        //
+        this.noPlat = noPlat;
+
+        // this.posisiSekarang merupaakan instance variabel dari kelas Lokasi yang merepresentasikan posisi ojek saat ini
+        this.posisiSekarang = posisiSekarang;
+    }
+    
     /**
      * Setter nama pengemudi ojek
      * 

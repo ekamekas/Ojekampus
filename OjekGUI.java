@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 /**
  * Write a description of class CustomerGUI here.
  * 
@@ -9,32 +10,71 @@ import java.awt.*;
 public class OjekGUI extends JFrame
 {
     // instance variables - replace the example below with your own
+    JPanel mainPane;
     JLabel titleLabel;
-    JPanel mainPanel;
-    JPanel titlePanel;
-    JPanel actionPanel;
     JButton registerButton;
-    JButton LoginButton;
+    JButton loginButton;
     public OjekGUI(){
-        super("Customer GUI");
+        super("Ojek GUI");
         setSize( 300, 300 );
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        // Containers
+        mainPane = new JPanel();
+        mainPane.setSize(200, 200);
+        add(mainPane);
+        // end container
+        // Components, 
         titleLabel = new JLabel("Ojek");
-        mainPanel = new JPanel();
-        titlePanel = new JPanel();
-        actionPanel = new JPanel();
-        titlePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        actionPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
         registerButton = new JButton("Register");
-        LoginButton = new JButton("Log-In");
-        titlePanel.add(titleLabel);
-        actionPanel.add(registerButton);
-        actionPanel.add(LoginButton);
-        mainPanel.add(titleLabel);
-        mainPanel.add(titlePanel);
-        mainPanel.add(actionPanel);
-        add(mainPanel);
+        loginButton = new JButton("Login");
+        add(titleLabel);
+        mainPane.add(registerButton);
+        mainPane.add(loginButton);
+        // End components
+        // Layout
+        getContentPane().setLayout(new GridBagLayout());
+        GroupLayout layout = new GroupLayout(mainPane);
+        mainPane.setLayout(layout);
+        layout.setAutoCreateGaps(true);
+        layout.setAutoCreateContainerGaps(true);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(GroupLayout.Alignment.CENTER)
+                .addComponent(titleLabel,       GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE)
+                .addComponent(registerButton,   GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE)
+                .addComponent(loginButton,      GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE)
+        );
+        layout.linkSize(registerButton, loginButton);
+        layout.setVerticalGroup(
+            layout.createSequentialGroup()
+                .addComponent(titleLabel,       GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE)
+                .addComponent(registerButton,   GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE)
+                .addComponent(loginButton,      GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE,
+                                                GroupLayout.PREFERRED_SIZE)
+        );
+        // End layout
+        // Listener
+        registerButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                new RegisterOjekGUI();
+            }
+        });
+        loginButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                new OjekLoginGUI();
+            }
+        });
+        // End listener
         this.setVisible(true);
     }
 }

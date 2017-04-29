@@ -58,6 +58,42 @@ public class Pelanggan extends User
         super.telefon = telefon;
     }
     
+    public Pelanggan(int id, String nama, String telefon, String email)
+    {
+        /* Konstruktor Pelanggan akan berperan sebagai inisiasi variabel ketika Objek Pelanggan dibuat
+         * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
+         * Setiap parameter harus diisi dengan nilai paling tidak null atau 0
+         * Setiap parameter akan memberikan nilai ke field class akesor private
+         */
+        // this.id merupaakan nomor identitas yang merepresentasikan pelanggan
+        super.id = id;
+        // this.nama merupakan nama dari pelanggan
+        super.nama = nama;
+        //
+        super.telefon = telefon;
+        //
+        super.email = email;
+    }
+    
+    public Pelanggan(int id, String nama, String telefon, String email, Date dob)
+    {
+        /* Konstruktor Pelanggan akan berperan sebagai inisiasi variabel ketika Objek Pelanggan dibuat
+         * Konstrukter akan melakukan inisiasi nilai variabel class dengan nilai parameter
+         * Setiap parameter harus diisi dengan nilai paling tidak null atau 0
+         * Setiap parameter akan memberikan nilai ke field class akesor private
+         */
+        // this.id merupaakan nomor identitas yang merepresentasikan pelanggan
+        super.id = id;
+        // this.nama merupakan nama dari pelanggan
+        super.nama = nama;
+        //
+        super.telefon = telefon;
+        //
+        super.email = email;
+        //
+        super.dob = dob;
+    }
+    
     /**
      * Print informasi identitasdan nama pelanggan
      * 
