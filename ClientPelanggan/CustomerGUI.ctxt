@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=user
+comment0.target=CustomerGUI(Model.Pelanggan)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ OjekGUI\r\n
+comment1.params=user\ watchDog
+comment1.target=CustomerGUI(Model.Pelanggan,\ WatchDog)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MainMenuGUI\r\n
+comment2.params=
+comment2.target=void\ display()
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5

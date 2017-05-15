@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=user
+comment0.target=OjekGUI(Model.Ojek)
+comment0.text=\r\n\ Konstruktor\ objek\ antarmuka\ LoginGUI\r\n\ \r\n\ @param\ \ \ JFrame\ \ \ \ \ \ Panel\ utama\ dari\ main\ program\r\n\ @param\ \ \ WatchDog\ \ \ \ Objek\ program\ monitoring\r\n
+comment1.params=user\ watchDog
+comment1.target=OjekGUI(Model.Ojek,\ WatchDog)
+comment1.text=\r\n\ Konstruktor\ objek\ antarmuka\ LoginGUI\r\n\ \r\n\ @param\ \ \ JFrame\ \ \ \ \ \ Panel\ utama\ dari\ main\ program\r\n\ @param\ \ \ WatchDog\ \ \ \ Objek\ program\ monitoring\r\n
+comment2.params=
+comment2.target=void\ display()
+comment3.params=e
+comment3.target=void\ focusGained(java.awt.event.FocusEvent)
+comment4.params=e
+comment4.target=void\ focusLost(java.awt.event.FocusEvent)
+comment5.params=e
+comment5.target=void\ focusGained(java.awt.event.FocusEvent)
+comment6.params=e
+comment6.target=void\ focusLost(java.awt.event.FocusEvent)
+comment7.params=e
+comment7.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment8.params=args
+comment8.target=void\ main(java.lang.String[])
+comment8.text=\r\n\ Main\ metode\r\n
+numComments=9

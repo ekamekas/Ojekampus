@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=pesan
+comment0.target=boolean\ addPesanan(Model.Pesanan)
+comment0.text=\r\n\ Penambahan\ pesanan\ baru\ ke\ dalam\ list\r\n\ \r\n\ @param\ \ \ \ \ \ \ pesan\ \ \ \ \ \ \ \ \ \ \ pesanan\ layanan\ ojek\r\n\ \r\n\ @return\ \ \ \ \ \ boolean\ \ \ \ \ \ \ \ \ merepresentasikan\ keberhasilan\ /\ tidaknya\ proses\ penambahan\ pesanan\r\n\ \r\n
+comment1.params=
+comment1.target=java.util.ArrayList\ getDatabase()
+comment1.text=\r\n\ Getter\ database\r\n\ \r\n\ @param\ \ \ \ \ \ \ none\ \ \ \ \ \ \ \ \ \ \ \ nothing\r\n\ \r\n\ @return\ \ \ \ \ \ -\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\r\n\ \r\n
+comment2.params=pengguna
+comment2.target=Model.Pesanan\ getPesanan(Model.Pelanggan)
+comment2.text=\r\n\ Getter\ pesanan\ -\ pesanan\ melalui\ list\r\n\ \r\n\ @param\ \ \ \ \ \ \ none\ \ \ \ \ \ \ \ \ \ \ \ nothing\r\n\ \r\n\ @return\ \ \ \ \ \ listPesanan\ \ \ \ \ menyimpan\ data\ -\ data\ dari\ seluruh\ instance\ pesanan\ yang\ ditambahkan\r\n\ \r\n
+comment3.params=pengguna
+comment3.target=boolean\ hapusPesanan(Model.Pelanggan)
+comment3.text=\r\n\ Penghapusan\ pesanan\ dari\ dalam\ list\r\n\ \r\n\ @param\ \ \ \ \ \ \ pesan\ \ \ \ \ \ \ \ \ \ \ pesanan\ layanan\ ojek\r\n\ \r\n\ @return\ \ \ \ \ \ boolean\ \ \ \ \ \ \ \ \ merepresentasikan\ keberhasilan\ /\ tidaknya\ proses\ penambahan\ pesanan\r\n\ \r\n
+comment4.params=pesan
+comment4.target=boolean\ hapusPesanan(Model.Pesanan)
+comment4.text=\r\n\ Penghapusan\ pesanan\ dari\ dalam\ list\r\n\ \r\n\ @param\ \ \ \ \ \ \ pesan\ \ \ \ \ \ \ \ \ \ \ pesanan\ layanan\ ojek\r\n\ \r\n\ @return\ \ \ \ \ \ boolean\ \ \ \ \ \ \ \ \ merepresentasikan\ keberhasilan\ /\ tidaknya\ proses\ penambahan\ pesanan\r\n\ \r\n
+numComments=5

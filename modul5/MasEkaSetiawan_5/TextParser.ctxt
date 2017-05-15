@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.params=filePath
-comment0.target=java.util.ArrayList\ textParser(java.lang.String)
-comment0.text=\r\n\ Metode\ untuk\ melakukan\ pengambilan\ data\ dari\ sebuah\ file\r\n\ \r\n\ @param\ \ filePath\ \ \ Path\ letak\ file\ relative\ terhadap\ program\r\n\ @return\ \ \ \ \ ArrayList\ dari\ hasil\ parsing\ file\ \r\n
-numComments=1

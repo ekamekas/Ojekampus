@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Test()
+comment1.params=
+comment1.target=java.lang.Object\ testLoginOjek()
+comment2.params=
+comment2.target=java.lang.Boolean\ testLogutOjek()
+comment3.params=
+comment3.target=void\ waiting()
+comment4.params=
+comment4.target=void\ testSelesai()
+comment5.params=
+comment5.target=void\ testBatal()
+comment6.params=
+comment6.target=java.util.ArrayList\ testDatabase()
+comment7.params=
+comment7.target=java.util.ArrayList\ pesananDatabase()
+numComments=8

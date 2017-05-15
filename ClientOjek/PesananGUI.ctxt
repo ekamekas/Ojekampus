@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=frame\ pesanan\ watchDog
+comment0.target=PesananGUI(javax.swing.JFrame,\ Model.Pesanan,\ WatchDog)
+comment0.text=\r\n\ Konstruktor\ objek\ antarmuka\ PesananGUI\r\n\ \r\n\ @param\ \ \ JFrame\ \ \ \ \ \ Panel\ utama\ dari\ main\ program\r\n\ @param\ \ \ Pesanan\ \ \ \ \ Pesanan\ panel\ utama\ dari\ main\ program\r\n\ @param\ \ \ WatchDog\ \ \ \ Objek\ program\ monitoring\r\n
+comment1.params=
+comment1.target=void\ display()
+comment1.text=\r\n\ Metode\ ini\ digunakan\ untuk\ melakukan\ proses\ yang\ berkaitan\ dengan\ penampilan\r\n\ Dalam\ metode\ ini\ dilakukan\ setting\ up\ kontainer,\ komponen\ yang\ digunakan,\ layouting\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=3

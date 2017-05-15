@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ connect()
+comment0.text=\r\n\ Kelas\ untuk\ membuat\ hubungan\ dengan\ database\r\n
+comment1.params=
+comment1.target=void\ disconnect()
+comment1.text=\r\n\ Kelas\ untuk\ memutus\ hubungan\ dengan\ database\r\n
+comment2.params=query
+comment2.target=java.lang.Boolean\ updateData(java.lang.String)
+comment3.params=query
+comment3.target=java.util.ArrayList\ getData(java.lang.String)
+numComments=4

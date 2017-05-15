@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ connect()
+comment0.text=\r\n\ Metode\ ini\ untuk\ membuat\ hubungan\ socket\ dengan\ remote\ program\r\n
+comment1.params=
+comment1.target=void\ disconnect()
+comment1.text=\r\n\ Metode\ ini\ untuk\ memutuskan\ hubungan\ socket\ dengan\ remote\ program\r\n
+comment2.params=command
+comment2.target=void\ sendCommand(Controller.ConnectionCommand)
+comment2.text=\r\n\ Metode\ ini\ untuk\ mengirimkan\ data\ berupa\ komando\ yang\ telah\ didefinisikan\r\n\ \r\n\ @param\ \ \ ConnectionCommand\ \ \ Komando\ yang\ akan\ dikirimkan\ ke\ remote\r\n\ @see\ \ \ \ \ Controller.ConnectionCommand\r\n
+comment3.params=data
+comment3.target=void\ sendData(java.lang.Object)
+comment3.text=\r\n\ Metode\ ini\ untuk\ mengirimkan\ data\ secara\ umum\r\n\ \r\n\ @param\ \ \ Object\ \ \ data\ yang\ akan\ dikirimkan\ ke\ remote\r\n\ @see\ \ \ \ \ Object\r\n
+comment4.params=
+comment4.target=java.lang.Object\ getData()
+comment4.text=\r\n\ Metode\ ini\ untuk\ menerima\ data\ secara\ umum\r\n\ \r\n\ @return\ \ \ Object\ \ \ data\ yang\ diterima\ dari\ remote\r\n\ @see\ \ \ \ \ Object\r\n
+numComments=5
